@@ -1,5 +1,6 @@
 # Insert in the middle of an array
 Function that receives an array and a value, and return a new array with all the same elements and the value inserted in the middle of the array.
+Includes the streach goal, which is in function delete_shift_array, which receives an array and return a new array with all the same elements except the one in the middle of the array.
 
 ## Challenge
 ### Challenge 02

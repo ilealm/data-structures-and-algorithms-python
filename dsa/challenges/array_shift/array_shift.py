@@ -12,3 +12,18 @@ def insert_shift_array(array, value):
 
     return return_array
 
+# # Challenge 02: streach goal.
+def delete_shift_array(array):
+    """Function that receives an array and return a new array with all the same elements except the one in the middle of the array."""
+    if len(array) % 2 :
+        middle = len(array) // 2
+    else:
+        middle = (math.ceil(len(array) / 2)) #- 1
+    return_array = []
+    for i in range(len(array)):
+        if i != middle : return_array.append(array[i])
+
+    return return_array
+
+
+
