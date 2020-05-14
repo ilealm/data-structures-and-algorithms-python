@@ -52,6 +52,8 @@ def binary_search_recursive(list_to_seach, key,search_begin, search_end):
 
 
 def binary_search(list_to_seach, key):
+    if len(list_to_seach) == 0 : return -1
+
     if len(list_to_seach) == 1:
         if list_to_seach[0] == key :
             print("Value founded")
@@ -91,14 +93,13 @@ def binary_search(list_to_seach, key):
 
 
 
-
 # if __name__ == "__main__":
-    # array = [10,20,30,40,50,60,70,80,90,100] #middle: 5
+#     array = [10,20,30,40,50,60,70,80,90,100] #middle: 5
     # array = [10,20,30,40, 50,60,70,80,90] #middle: 5
     # array = [10,20,30,40] #middle: 2
     # array = [10,20,30] #middle: 2
     # array = [10,20] #middle: 1
     # array = [10] #middle: 1
-    # key = 10
+    # key = 50
     # print("original array:", array)
     # print('returned index:',binary_search(array,key))
