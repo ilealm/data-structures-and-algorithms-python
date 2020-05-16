@@ -10,6 +10,12 @@ class LinkedList():
         if self.head : new_node.next = self.head
         self.head = new_node
 
+    def includes(self,value):
+        current = self.head
+        while current:
+            if current.value == value : return True
+            current = current.next
+        return False
 
 class Node():
     def __init__ (self, value, next_ = None):
@@ -25,17 +31,12 @@ if __name__ == "__main__":
 
     ll.insert("One")
     print("head", ll.head)
-    # one = Node("One")
-    # two = Node("Two")
-    # print("original values: head:", myHead, ' : ', one, two)
+    ll.insert("Two")
+    print("head", ll.head)
+    ll.insert("Three")
+    print("head", ll.head)
 
-    # myHead.head = one
-    # one.next = two
-
-    # print("new values head ", myHead)
-    # print("new values one:",one)
-    # print("new values two:", two)
-
+    print(ll.includes("Three"))
 
 
 
