@@ -32,22 +32,26 @@ class Node():
         self.value =  value
         self.next = next_
 
+        if (not next_ == None) and ( not isinstance(next_, Node)):
+            raise TypeError("The value of the next node MUST be a node")
+
+
     def __repr__(self):
         return f"{self.value} -> {self.next}"
 
-if __name__ == "__main__":
-    ll = LinkedList()
-    print("head", ll.head)
+# if __name__ == "__main__":
+#     ll = LinkedList()
+#     print("head", ll.head)
 
-    ll.insert("One")
-    print("head", ll.head)
-    ll.insert("Two")
-    print("head", ll.head)
-    ll.insert("Three")
-    print("head", ll.head)
+#     ll.insert("One")
+#     print("head", ll.head)
+#     ll.insert("Two")
+#     print("head", ll.head)
+#     ll.insert("Three")
+#     print("head", ll.head)
 
-    print(ll.includes("Tdhree"))
-    print(ll.__str__())
+#     print(ll.includes("Tdhree"))
+#     print(ll.__str__())
 
 
 
