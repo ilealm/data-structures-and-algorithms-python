@@ -10,6 +10,14 @@ class LinkedList():
         if self.head : new_node.next = self.head
         self.head = new_node
 
+    def append(self,value):
+        new_node = Node(value)
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = new_node
+        print('last',current)
+
     def includes(self,value):
         current = self.head
         while current:
@@ -41,5 +49,9 @@ class Node():
 
 
 
-
-
+ll = LinkedList()
+ll.insert("First")
+ll.insert("Second")
+ll.insert("Third")
+ll.append('cuatro')
+print(ll)

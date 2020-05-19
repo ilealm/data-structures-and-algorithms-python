@@ -35,6 +35,13 @@ def test_LinkedList_six():
     expected = "NULL"
     assert actual == expected
 
+def test_append_one(dummy_LinkedList):
+    dummy_LinkedList.append('Fourth')
+    dummy_LinkedList.append('Fifth')
+    actual = dummy_LinkedList.__str__()
+    expected = "{ Third } -> { Second } -> { First } -> { Fourth } -> { Fifth } -> NULL"
+    assert actual == expected
+
 
 @pytest.fixture
 def dummy_LinkedList():
