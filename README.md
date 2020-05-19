@@ -8,3 +8,5 @@
 [Challenge 03 - Array-Binary-Search](/dsa/challenges/array_binary_search/README.md)
 
 [Challenge 05 - Linked List](/dsa/challenges/linked_list/README.md)
+
+[Challenge 06 - Linked List](/dsa/challenges/linked_list/README.md)

@@ -33,7 +33,6 @@ class LinkedList():
 
         while current.next:
             if current.next.value == value:
-                print('here')
                 new_node.next = current.next
                 current.next = new_node
                 return
@@ -85,20 +84,3 @@ class Node():
 
 
 
-# ll = LinkedList()
-# ll.insert("First")
-# # ll.insert("Second")
-# # ll.insert("Third")
-# # ll.append('Fourth')
-# ll.insert_before("First", '1.4')
-# print(ll)
-
-# ll = LinkedList()
-# ll.insert("First")
-# ll.insert("Second")
-# print('original', ll.__str__())
-# ll.insert_before("Second", "1.5")
-# actual = ll.__str__()
-# expected = "{ 1.5 } -> { Second } -> { First } -> NULL"
-# print ("actual", actual)
-# print ("expeed", expected)

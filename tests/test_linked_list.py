@@ -61,6 +61,26 @@ def test_insert_before_middle():
     expected = "{ Second } -> { 1.5 } -> { First } -> NULL"
     assert actual == expected
 
+def test_insert_after_one(dummy_LinkedList):
+    dummy_LinkedList.insert_after("Third", "Fourth")
+    actual = dummy_LinkedList.__str__()
+    expected = "{ Third } -> { Fourth } -> { Second } -> { First } -> NULL"
+    assert actual == expected
+
+def test_insert_after_head():
+    ll = LinkedList()
+    ll.insert("First")
+    ll.insert_after("First", "Cero")
+    actual = ll.__str__()
+    expected = "{ First } -> { Cero } -> NULL"
+    assert actual == expected
+
+def test_insert_after_no_node():
+    ll = LinkedList()
+    ll.insert_after("One", "New value")
+    actual = ll.__str__()
+    expected = "NULL"
+    assert actual == expected
 
 @pytest.fixture
 def dummy_LinkedList():
