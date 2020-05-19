@@ -10,6 +10,49 @@ class LinkedList():
         if self.head : new_node.next = self.head
         self.head = new_node
 
+    def append(self,value):
+        new_node = Node(value)
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = new_node
+
+
+    def insert_before(self, value, new_val):
+        new_node = Node(new_val)
+        current = self.head
+
+        if not current: return
+
+        # # if there is only the head node, append to the right
+        # if not current.next and current.value == value :
+        if current.value == value :
+            new_node.next = self.head
+            self.head = new_node
+            return
+
+        while current.next:
+            if current.next.value == value:
+                new_node.next = current.next
+                current.next = new_node
+                return
+            current = current.next
+
+
+    def insert_after(self, value, new_val):
+        new_node = Node(new_val)
+        current = self.head
+
+        if not current: return
+
+        while current:
+            if current.value == value:
+                new_node.next = current.next
+                current.next = new_node
+                return
+            current = current.next
+
+
     def includes(self,value):
         current = self.head
         while current:
@@ -38,8 +81,6 @@ class Node():
 
     def __repr__(self):
         return f"{self.value} -> {self.next}"
-
-
 
 
 

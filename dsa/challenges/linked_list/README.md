@@ -19,5 +19,33 @@ For searching a value, the Big O(n), because the searched element can be the las
 founded on the list, it stop traversing.
 
 ## Solution
-In this case, the problem was very similar to the one we saw on class
+Solution for lab 6, Linked List v2
+
+___________
+# Linked List , part 2
+In this0 challenge we add methods over Linklist.
+
+## Challenge
+### Challenge 06
+
+challenges/linked_list/linked_list.py
+GitHub Pull# 5
+
+[Pull on GitHub](https://github.com/ilealm/data-structures-and-algorithms-python/pull/5)
+
+
+## Approach & Efficiency
+For append method, this code have Big O(n) becausein worse case scenario, we have to traver all existing nodes.
+
+For insert_before method, this code have Big O(n) becausein worse case scenario, we have to traver all existing nodes.
+
+For insert_after method, this code have Big O(n) becausein worse case scenario, we have to traver all existing nodes.
+
+
+## Solution
+Solution for lab 6, Linked List v2
+
+_Sorry for the bad gritting...._
+
+![My solution](/assets/linked_list.jpg)
 
