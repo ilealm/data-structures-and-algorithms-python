@@ -43,6 +43,25 @@ def test_append_one(dummy_LinkedList):
     assert actual == expected
 
 
+def test_insert_before_first_node():
+    ll = LinkedList()
+    ll.insert("First")
+    ll.insert("Second")
+    ll.insert_before("Second", "Third")
+    actual = ll.__str__()
+    expected = "{ Third } -> { Second } -> { First } -> NULL"
+    assert actual == expected
+
+def test_insert_before_middle():
+    ll = LinkedList()
+    ll.insert("First")
+    ll.insert("Second")
+    ll.insert_before("First", "1.5")
+    actual = ll.__str__()
+    expected = "{ Second } -> { 1.5 } -> { First } -> NULL"
+    assert actual == expected
+
+
 @pytest.fixture
 def dummy_LinkedList():
     ll = LinkedList()
