@@ -13,6 +13,12 @@ class LinkedList():
     def append(self,value):
         new_node = Node(value)
         current = self.head
+
+        # if the head is none, then call insert function
+        if not current :
+            self.insert(value)
+            return
+
         while current.next:
             current = current.next
         current.next = new_node
@@ -24,8 +30,6 @@ class LinkedList():
 
         if not current: return
 
-        # # if there is only the head node, append to the right
-        # if not current.next and current.value == value :
         if current.value == value :
             new_node.next = self.head
             self.head = new_node
@@ -51,6 +55,29 @@ class LinkedList():
                 current.next = new_node
                 return
             current = current.next
+
+    def how_many_nodes(self):
+        current = self.head
+        num_nodes = 0
+
+        while current:
+            num_nodes += 1
+            current = current.next
+
+        return num_nodes
+
+    def kth_from_end(self, k_value):
+        ll_num_nodes = (self.how_many_nodes())
+        nodes_to_traverse = ll_num_nodes - k_value
+
+        if k_value < 0 : return "The value to search must be greater than 0."
+        if 0 > nodes_to_traverse : return "The kth position is greater than the Linkedlist lenght."
+
+        current = self.head
+        for i in range(0, nodes_to_traverse):
+            current = current.next
+
+        return current.value
 
 
     def includes(self,value):
@@ -83,4 +110,21 @@ class Node():
         return f"{self.value} -> {self.next}"
 
 
+
+# if __name__ == "__main__":
+#     ll = LinkedList()
+#     ll.append("one")
+#     ll.insert("one")
+#     ll.insert("two")
+#     ll.insert("tree")
+#     ll.insert("four")
+#     ll.insert("five")
+#     ll.insert("six")
+# if append when list is null, call insert
+    # print(ll)
+    # print('total nodes', ll.how_many_nodes())
+    # pos = 0 to validate
+    # pos = 3
+    # print('the value of position:', pos, ' is:', ll.kth_from_end(pos))
+# kth_from_end
 
