@@ -82,6 +82,37 @@ def test_insert_after_no_node():
     expected = "NULL"
     assert actual == expected
 
+def test_kth_from_end_greater(big_dummy_LinkedList):
+    actual = big_dummy_LinkedList.kth_from_end(10)
+    expected = "The kth position is greater than the Linkedlist lenght."
+    assert actual == expected
+
+
+def test_kth_from_end_same_lenght(big_dummy_LinkedList):
+    actual = big_dummy_LinkedList.kth_from_end(6)
+    expected = "Sixth"
+    assert actual == expected
+
+def test_kth_from_end_same_greater_cero(big_dummy_LinkedList):
+    actual = big_dummy_LinkedList.kth_from_end(-5)
+    expected = "The value to search must be greater than 0."
+    assert actual == expected
+
+def test_kth_from_end_one_node():
+    ll = LinkedList()
+    ll.insert("First")
+    actual = ll.kth_from_end(1)
+    expected = "First"
+    assert actual == expected
+
+def test_kth_from_end_same_greater_middle(big_dummy_LinkedList):
+    actual = big_dummy_LinkedList.kth_from_end(4)
+    expected = "Fourth"
+    assert actual == expected
+
+
+
+
 @pytest.fixture
 def dummy_LinkedList():
     ll = LinkedList()
@@ -90,3 +121,13 @@ def dummy_LinkedList():
     ll.insert("Third")
     return ll
 
+@pytest.fixture
+def big_dummy_LinkedList():
+    ll = LinkedList()
+    ll.insert("First")
+    ll.insert("Second")
+    ll.insert("Third")
+    ll.insert("Fourth")
+    ll.insert("Fifth")
+    ll.insert("Sixth")
+    return ll
