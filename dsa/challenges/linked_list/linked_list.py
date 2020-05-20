@@ -13,6 +13,12 @@ class LinkedList():
     def append(self,value):
         new_node = Node(value)
         current = self.head
+
+        # if the head is none, then call insert function
+        if not current :
+            self.insert(value)
+            return
+
         while current.next:
             current = current.next
         current.next = new_node
@@ -24,8 +30,6 @@ class LinkedList():
 
         if not current: return
 
-        # # if there is only the head node, append to the right
-        # if not current.next and current.value == value :
         if current.value == value :
             new_node.next = self.head
             self.head = new_node
@@ -65,7 +69,7 @@ class LinkedList():
     def kth_from_end(self, k_value):
         ll_num_nodes = (self.how_many_nodes())
         nodes_to_traverse = ll_num_nodes - k_value
-        
+
         if k_value < 0 : return "The value to search must be greater than 0."
         if 0 > nodes_to_traverse : return "The kth position is greater than the Linkedlist lenght."
 
@@ -109,6 +113,7 @@ class Node():
 
 # if __name__ == "__main__":
 #     ll = LinkedList()
+#     ll.append("one")
 #     ll.insert("one")
 #     ll.insert("two")
 #     ll.insert("tree")

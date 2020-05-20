@@ -7,6 +7,8 @@
 
 [Challenge 03 - Array-Binary-Search](/dsa/challenges/array_binary_search/README.md)
 
-[Challenge 05 - Linked List](/dsa/challenges/linked_list/README.md)
+[Challenge 05 - Linked List, insertion, displaying_nodes and searching](/dsa/challenges/linked_list/README.md)
 
-[Challenge 06 - Linked List](/dsa/challenges/linked_list/README.md)
+[Challenge 06 - Linked List, append, insert_before and insert_after](/dsa/challenges/linked_list/README.md)
+
+[Challenge 07 - Linked List, get value of x possition, starting at end](/dsa/challenges/linked_list/README.md)
