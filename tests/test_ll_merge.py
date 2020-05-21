@@ -8,6 +8,24 @@ def test_merge_list_same_lenght(dummy_LinkedList_a, dummy_LinkedList_b):
     assert actual == expected, "Error on ziping two lilnked list of the same lenght."
 
 
+def test_merge_list_diff_lenght(dummy_LinkedList_a):
+    dummy_LinkedList_b = LinkedList()
+    dummy_LinkedList_b.insert("1")
+    actual = str(merge_list(dummy_LinkedList_a,dummy_LinkedList_b))
+    expected = "A -> 1 -> B -> C -> None"
+    assert actual == expected, "Error on ziping two lilnked list of different lenght."
+
+def test_merge_list_empty_list():
+    actual = str(merge_list(LinkedList(),LinkedList()))
+    expected = "None"
+    assert actual == expected, "Error on ziping two empty lilnked list."
+
+def test_merge_list_empty_list(dummy_LinkedList_a):
+    actual = str(merge_list(dummy_LinkedList_a,LinkedList()))
+    expected = "A -> B -> C -> None"
+    assert actual == expected, "Error on ziping two empty lilnked list."
+
+
 @pytest.fixture
 def dummy_LinkedList_a():
     ll = LinkedList()
