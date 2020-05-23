@@ -2,6 +2,18 @@
 # from collections import deque
 # python -i dsa/challenges/stacks_and_queues/stacks_and_queues.py
 
+class Node():
+    def __init__(self, value, next_ = None):
+        self.value =  value
+        self.next = next_
+
+        if (not next_== None) and (not isinstance(next_, Node)):
+            raise TypeError("Error creating the node. The value of next must be a node.")
+
+    def __repr__(self):
+        return f"{self.value} -> {self.next}"
+
+
 class Stack():
     def __init__(self):
         self.top = None
@@ -37,24 +49,45 @@ class Stack():
         return self.top == None
 
 
-
-
-
-class Node():
-    def __init__(self, value, next_ = None):
-        self.value =  value
-        self.next = next_
-
-        if (not next_== None) and (not isinstance(next_, Node)):
-            raise TypeError("Error creating the node. The value of next must be a node.")
+class Queue():
+    def __init__(self):
+        self.front = None
+        self.rear = None
 
     def __repr__(self):
-        return f"{self.value} -> {self.next}"
+        return f"The rear is {self.rear} and the front is {self.front}"
 
-    # def __str__(self):
-    #     return f"{self.value} -> {self.next}"
+    def __str__(self):
+        return f"The rear is {self.rear} and the front is {self.front}"
 
 
+    def enqueue(self, value):
+        new_node = Node(value)
 
-# mynode = Node("Red")
-# print(mynode)
+        #is the 1st element
+        if self.rear == None:
+            self.front = new_node
+            self.rear = self.front
+        else:
+            self.rear.next = new_node
+            self.rear = self.rear.next
+
+
+    def dequeue(self):
+        if not self.is_empty():
+            temp_node = self.front
+            self.front = self.front.next
+            temp_node.next = None
+
+            # if there are no more nodes, clear rear
+            if self.front == None : self.rear = None
+
+            return temp_node.value
+        else:
+            raise Exception("Can't dequeue in an empty Queue.")
+
+
+    def is_empty(self):
+        return self.front == None
+
+
