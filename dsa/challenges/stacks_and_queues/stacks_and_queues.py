@@ -84,7 +84,13 @@ class Queue():
 
             return temp_node.value
         else:
-            raise Exception("Can't dequeue in an empty Queue.")
+            raise Exception ("Can't dequeue in an empty Queue.")
+
+    def peek(self):
+        if not self.is_empty():
+            return self.front.value
+        else:
+            raise Exception ("Can't peek in an empty Queue.")
 
 
     def is_empty(self):
