@@ -9,6 +9,28 @@ class Stack():
         new_node = Node(value, self.top)
         self.top = new_node
 
+    def pop(self):
+        # TODO: add is_empty
+        if self.top == None:
+            raise Exception ("Can not pop from an empty stack.")
+            return
+
+        temp_node = self.top
+        self.top = self.top.next
+        # remove the relationship to the stack
+        temp_node.next = None
+        return temp_node.value
+
+    def peek(self):
+        # TODO: add is_empty
+        if self.top == None:
+            raise Exception ("Can't peek on an empty stack.")
+            return
+
+        return self.top.value
+
+
+
 
 class Node():
     def __init__(self, value, next_ = None):
