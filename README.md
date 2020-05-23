@@ -12,3 +12,6 @@
 [Challenge 06 - Linked List, append, insert_before and insert_after](/dsa/challenges/linked_list/README.md)
 
 [Challenge 07 - Linked List, get value of x possition, starting at end](/dsa/challenges/linked_list/README.md)
+
+[Challenge 10 - Stacks and Queues](/dsa/challenges/stacks_and_queues/README.md)
+
