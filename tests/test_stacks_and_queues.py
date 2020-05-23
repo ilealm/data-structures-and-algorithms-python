@@ -44,12 +44,24 @@ def test_stack_pop_one():
     stack_ele.push("One")
 
     actual_value = stack_ele.pop()
-    # actual_value = stack_ele.pop()
 
     assert actual_value == expected_value, 'Error trying to pop one value with one node in the stack.'
 
+
 @pytest.mark.skip(reason="this is creating the exception, but the test fails. not sure if I have to test that here")
-def test_stack_pop_empty():
+def test_stack_pop_all(dummy_three_nodes_stack):
+    expected_value = None
+
+    dummy_three_nodes_stack.pop()
+    dummy_three_nodes_stack.pop()
+    actual_value = dummy_three_nodes_stack.pop()
+
+    assert actual_value == expected_value, 'Error trying to pop all the nodes in the stack.'
+
+
+
+@pytest.mark.skip(reason="this is creating the exception, but the test fails. not sure if I have to test that here")
+def test_stack_pop_when_empty():
     expected_value = "Can not pop from an empty stack."
     stack_ele = Stack()
 
@@ -63,6 +75,25 @@ def test_stack_peek_no_empty(dummy_three_nodes_stack):
     actual_value = dummy_three_nodes_stack.peek()
 
     assert actual_value ==  expected_value, "The value of the peek must be Three."
+
+
+def test_stack_is_empty_false(dummy_three_nodes_stack):
+    expected = False
+
+    actual = dummy_three_nodes_stack.is_empty()
+
+    assert actual == expected, ("Error on peek method. Should return false when the stack have values.")
+
+
+def test_stack_is_empty_true():
+    stack_ele = Stack()
+
+    expected = True
+
+    actual = stack_ele.is_empty()
+
+    assert actual == expected, ("Error on peek method. Should return true when the stack don't values.")
+
 
 @pytest.fixture
 def dummy_three_nodes_stack():
