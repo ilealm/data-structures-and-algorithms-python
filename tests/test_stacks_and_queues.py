@@ -10,6 +10,14 @@ def test_node_create_one():
     # Then
     assert actual == expected, "Error creating one Node."
 
+def test_stack_create_empty():
+    stack_ele = Stack()
+    expected = "The top is None"
+
+    actual = stack_ele.__str__()
+
+    assert actual == expected,  "Error creating an empty stack."
+
 def test_stack_push_one():
     # Given
     expected_value = 'One'
@@ -18,8 +26,8 @@ def test_stack_push_one():
     # When
     stack_ele.push("One")
     # Then
-    actual_value = stack_ele.top.value
-    actual_next = stack_ele.top.next
+    actual_value = stack_ele.peek()
+    actual_next = None
     assert actual_value == expected_value, "Error on pushing one node. Value should match the constructor."
     assert actual_next == expected_next, "Error on pushing one node. Next should be None for the first node."
 
@@ -33,7 +41,7 @@ def test_stack_push_multiple():
     stack_ele.push("Two")
     stack_ele.push("Three")
     # Then
-    actual_value = stack_ele.top.value
+    actual_value = stack_ele.peek()
     actual_next = stack_ele.top.next.value
     assert actual_value == expected_value, "Error on pushing multiple node. Value should match the constructor."
     assert actual_next == expected_next, "Error on pushing multiple node. Next should be two."
@@ -46,6 +54,7 @@ def test_stack_pop_one():
     actual_value = stack_ele.pop()
 
     assert actual_value == expected_value, 'Error trying to pop one value with one node in the stack.'
+
 
 
 @pytest.mark.skip(reason="this is creating the exception, but the test fails. not sure if I have to test that here")

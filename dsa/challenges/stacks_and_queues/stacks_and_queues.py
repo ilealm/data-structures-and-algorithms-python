@@ -9,6 +9,9 @@ class Stack():
     def __repr__(self):
         return f"The top is {self.top}"
 
+    def __str__(self):
+        return f"The top is {self.top}"
+
     def push(self, value):
         new_node = Node(value, self.top)
         self.top = new_node
