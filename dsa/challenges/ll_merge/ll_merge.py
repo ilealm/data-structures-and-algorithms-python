@@ -1,4 +1,4 @@
-from challenges.linked_list.linked_list import LinkedList, Node
+from dsa.challenges.linked_list.linked_list import LinkedList, Node
 
 def merge_list(list_a, list_b):
 
@@ -24,14 +24,14 @@ def merge_list(list_a, list_b):
 
 # if __name__ == "__main__":
 #     ll_a = LinkedList()
-    # ll_a.append('A')
-    # ll_a.append('B')
-    # ll_a.append('C')
-    # ll_b = LinkedList()
-    # ll_b.append('1')
-    # ll_b.append('2')
-    # ll_b.append('3')
+#     ll_a.append('A')
+#     ll_a.append('B')
+#     ll_a.append('C')
+#     ll_b = LinkedList()
+#     ll_b.append('1')
+#     ll_b.append('2')
+#     ll_b.append('3')
 
-    # print(ll_a)
-    # print(ll_b)
-    # print(merge_list(ll_a, ll_b))
+#     print(ll_a)
+#     print(ll_b)
+#     print(merge_list(ll_a, ll_b))
