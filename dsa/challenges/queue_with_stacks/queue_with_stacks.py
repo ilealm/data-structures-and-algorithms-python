@@ -1,4 +1,5 @@
-from dsa.challenges.stacks_and_queues.stacks_and_queues import Stack
+# from .stacks_and_queues import Stack
+from ..stacks_and_queues.stacks_and_queues import Stack
 # works with export PYTHONPATH=~/codefellows/401/data-structures-and-algorithms-python/
 
 class PseudoCode():
@@ -33,8 +34,9 @@ if __name__ == "__main__":
     pc.enqueue("ian")
     pc.enqueue("emma")
     print(pc)
-    print('the returned value is' , pc.dequeue())
-    print ('moving stack:', pc.moving_stack)
-    print ('modified main stack:', pc)
+    print(pc.dequeue())
+    print(pc.dequeue())
+    print(pc.dequeue())
+    print(pc.dequeue())
     print(pc.dequeue())
     print ('modified main stack:', pc)
