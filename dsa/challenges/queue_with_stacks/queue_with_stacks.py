@@ -1,5 +1,5 @@
 # from .stacks_and_queues import Stack
-from ..stacks_and_queues.stacks_and_queues import Stack
+from dsa.challenges.stacks_and_queues.stacks_and_queues import Stack
 # works with export PYTHONPATH=~/codefellows/401/data-structures-and-algorithms-python/
 
 class PseudoCode():
@@ -36,7 +36,7 @@ if __name__ == "__main__":
     print(pc)
     print(pc.dequeue())
     print(pc.dequeue())
-    print(pc.dequeue())
+
     print(pc.dequeue())
     print(pc.dequeue())
     print ('modified main stack:', pc)
