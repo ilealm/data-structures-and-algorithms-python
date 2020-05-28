@@ -36,7 +36,11 @@ class AnimalShelter():
 
 
 
-    def dequeue(self):
+    def dequeue(self, pref=None):
+        if (pref != 'Cat') and (pref != 'Dog'):
+            print('not cat or dog')
+            return None
+
         if not self.is_empty():
             temp_node = self.front
             self.front = self.front.next
@@ -61,22 +65,6 @@ class AnimalShelter():
         return self.front == None
 
 
-
-if __name__ == "__main__":
-    # cat = Animal('Cat')
-    # dog = Animal('Dog')
-    # print(cat, dog)
-    ah = AnimalShelter()
-    ah.enqueue('Cat1')
-    ah.enqueue('Dog2')
-    ah.enqueue('Cat3')
-    # print(ah.peek())
-    print(ah)
-    print(ah.dequeue())
-    print(ah)
-    print(ah.dequeue())
-    print(ah)
-    print(ah.dequeue())
 
 
 
