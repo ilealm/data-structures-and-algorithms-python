@@ -38,7 +38,6 @@ class AnimalShelter():
 
     def dequeue(self, pref=None):
         if (pref != 'Cat') and (pref != 'Dog'):
-            print('not cat or dog')
             return None
 
         if not self.is_empty():
