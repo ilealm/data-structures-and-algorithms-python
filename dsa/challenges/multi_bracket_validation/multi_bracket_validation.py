@@ -61,32 +61,20 @@ class Validator:
             return False
 
     def is_match_on_stack(self, closing_bracket):
-        # TODO: when is only 1 ele in stack
-        # if the char is the closing bracket match for the top of the stack, then is correct, else return false
         if self.stack.is_empty() : return False
 
         opening_bracket = self.stack.pop()
-        print('revewing ', opening_bracket, 'and ', closing_bracket)
+
         if opening_bracket == '(' :
-            if closing_bracket == ')' :
-                print('valid () pair')
-                return True
-            else:
-                return False
+            if closing_bracket == ')' :  return True
 
         if opening_bracket == '[' :
-            if closing_bracket == ']' :
-                print('valid () pair')
-                return True
-            else:
-                return False
+            if closing_bracket == ']' :  return True
 
         if opening_bracket == '{' :
-            if closing_bracket == '}' :
-                print('valid {} pair')
-                return True
-            else:
-                return False
+            if closing_bracket == '}' : return True
+
+        return False
 
 
     def multi_bracket_validation(self, word):
@@ -95,20 +83,13 @@ class Validator:
         for ch in range(len(word)) :
             if self.is_opening_bracket(word[ch]) :
                 self.stack.push(word[ch])
-                # print('just pushed ', self.stack.peek())
 
             if self.is_closing_bracket(word[ch]) :
-                # print('reviewing closign', word[ch])
-                # valid_string = self.is_match_on_stack(word[ch])
                 if not self.is_match_on_stack(word[ch]) : valid_string = False
+
+
+        if self.stack.is_empty() == False : valid_string = False
+
 
         return valid_string
 
-
-if __name__ == "__main__":
-    val = Validator()
-    word = 'Iris'
-    # word = 'iris'
-    print(word)
-    print('Valid string: ', val.multi_bracket_validation(word))
-    # print(val)
