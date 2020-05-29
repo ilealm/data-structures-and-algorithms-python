@@ -15,3 +15,6 @@
 
 [Challenge 10 - Stacks and Queues](/dsa/challenges/stacks_and_queues/README.md)
 
+
+[Challenge 13 - Multi Bracket Validation](/dsa/challenges/multi_bracket_validation/README.md)
+

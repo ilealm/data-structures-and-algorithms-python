@@ -79,7 +79,7 @@ class Validator:
 
     def multi_bracket_validation(self, word):
         valid_string = True
-        bracket_mismatch = False
+        
         for ch in range(len(word)) :
             if self.is_opening_bracket(word[ch]) :
                 self.stack.push(word[ch])
