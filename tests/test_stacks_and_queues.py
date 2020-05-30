@@ -57,10 +57,10 @@ def test_stack_pop_one():
 
 
 
-@pytest.mark.skip(reason="this is creating the exception, but the test fails. not sure if I have to test that here")
 def test_stack_pop_all(dummy_three_nodes_stack):
-    expected_value = None
+    expected_value = "Can't pop from an empty stack."
 
+    dummy_three_nodes_stack.pop()
     dummy_three_nodes_stack.pop()
     dummy_three_nodes_stack.pop()
     actual_value = dummy_three_nodes_stack.pop()
@@ -69,9 +69,8 @@ def test_stack_pop_all(dummy_three_nodes_stack):
 
 
 
-@pytest.mark.skip(reason="this is creating the exception, but the test fails. not sure if I have to test that here")
 def test_stack_pop_when_empty():
-    expected_value = "Can not pop from an empty stack."
+    expected_value = "Can't pop from an empty stack."
     stack_ele = Stack()
 
     actual_value = stack_ele.pop()
@@ -147,9 +146,8 @@ def test_queue_dequeue_three(dummy_three_nodes_queue):
     assert actual == expected, "Error on dequeue all the values from the Queue."
 
 
-@pytest.mark.skip("This does generate the error, but also generates one here. Review this on class")
 def test_queue_dequeue_all(dummy_three_nodes_queue):
-    expected = "None"
+    expected = "Can't dequeue in an empty Queue."
 
     actual = dummy_three_nodes_queue.dequeue()
     actual = dummy_three_nodes_queue.dequeue()
@@ -159,10 +157,9 @@ def test_queue_dequeue_all(dummy_three_nodes_queue):
     assert actual == expected, "Error, there are not nodes on the Queue."
 
 
-@pytest.mark.skip("This raise the expected error, and also raises here")
 def test_queue_peek_empty():
     que = Queue()
-    expected = "None"
+    expected = "Can't peek in an empty Queue."
 
     actual = que.peek()
 
