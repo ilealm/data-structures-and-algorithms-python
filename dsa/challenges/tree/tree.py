@@ -89,12 +89,23 @@ class BinarySearchTree(BinaryTree):
 
 
     def contains(self, value):
+        exists_in_tree = []
+        exists_in_tree.append(False)
 
-        exists_in_tree = False
+        if not self.root: return exists_in_tree
 
+        def traverse(current_node, value_to_search):
+            if not current_node : return
+            if current_node.value == value_to_search :
+                exists_in_tree[0] = True
+            else:
+                if value_to_search < current_node.value :
+                    traverse(current_node.left, value_to_search)
+                else:
+                    traverse(current_node.right, value_to_search)
 
-
-        return exists_in_tree
+        traverse(self.root, value)
+        return exists_in_tree[0]
 
 
 if __name__ == "__main__":
@@ -105,10 +116,10 @@ if __name__ == "__main__":
     bst.add(25)
     bst.add(75)
     bst.add(110)
-    # print ('                     ',bst.root.value)
-    # print ('              ', bst.root.left.value, ' ---  ', bst.root.right.value)
 
     print(bst.preOrder())
     print(bst.inOrder())
     print(bst.postOrder())
+    print(bst.contains(205))
+    print(bst.contains(25))
 
