@@ -8,6 +8,11 @@ class BinaryTree:
     def __init__(self):
         self.root = None
 
+    def __str__(self):
+        if not self.root : return 'The root is empty.'
+
+        return f'The root is {self.root.value}'
+
     def preOrder(self):
         list_return = []
 
@@ -59,7 +64,9 @@ class BinaryTree:
 
 class BinarySearchTree(BinaryTree):
     def __str__(self):
-        return f'The root is {self.root}'
+        if not self.root : return 'The root is empty.'
+
+        return f'The root is {self.root.value}'
 
 
     def add(self, value):
@@ -106,16 +113,18 @@ class BinarySearchTree(BinaryTree):
 
 if __name__ == "__main__":
     bst = BinarySearchTree()
-    bst.add("Moby Dick")
-    bst.add("Great Expectations")
-    bst.add("Robinson Crusoe")
-    # bst.add(25)
-    # bst.add(75)
-    # bst.add(110)
 
-    print(bst.preOrder())
-    print(bst.inOrder())
-    print(bst.postOrder())
-    print(bst.contains("Moby Dick"))
-    print(bst.contains("Los tres mosqueteros"))
+    bst.add("Moby Dick")
+    print (bst)
+#     bst.add("Great Expectations")
+#     bst.add("Robinson Crusoe")
+#     # bst.add(25)
+#     # bst.add(75)
+#     # bst.add(110)
+
+#     print(bst.preOrder())
+#     print(bst.inOrder())
+#     print(bst.postOrder())
+#     print(bst.contains("Moby Dick"))
+#     print(bst.contains("Los tres mosqueteros"))
 
