@@ -111,20 +111,4 @@ class BinarySearchTree(BinaryTree):
         return traverse(self.root, value)
 
 
-if __name__ == "__main__":
-    bst = BinarySearchTree()
-
-    bst.add("Moby Dick")
-    print (bst)
-#     bst.add("Great Expectations")
-#     bst.add("Robinson Crusoe")
-#     # bst.add(25)
-#     # bst.add(75)
-#     # bst.add(110)
-
-#     print(bst.preOrder())
-#     print(bst.inOrder())
-#     print(bst.postOrder())
-#     print(bst.contains("Moby Dick"))
-#     print(bst.contains("Los tres mosqueteros"))
 
