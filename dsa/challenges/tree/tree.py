@@ -27,7 +27,7 @@ class BinaryTree:
     def inOrder(self):
         list_return = []
 
-        if self.root == None : return []
+        if self.root == None : return list_return
 
         def traverse(current_node):
             if not current_node : return
@@ -40,6 +40,21 @@ class BinaryTree:
         traverse(self.root)
         return list_return
 
+    def postOrder(self):
+        list_return = []
+
+        if not self.root :  return list_return
+
+        def traverse(current_node):
+            if not current_node : return
+
+            traverse(current_node.left)
+            traverse(current_node.right)
+            list_return.append(current_node.value)
+
+        traverse(self.root)
+
+        return list_return
 
 
 class BinarySearchTree(BinaryTree):
@@ -95,4 +110,5 @@ if __name__ == "__main__":
 
     print(bst.preOrder())
     print(bst.inOrder())
+    print(bst.postOrder())
 
