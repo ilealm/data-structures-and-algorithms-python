@@ -35,6 +35,7 @@ class Stack():
             temp_node.next = None
             return temp_node.value
         else:
+            return("Can't pop from an empty stack.")
             raise Exception ("Can't pop from an empty stack.")
 
 
@@ -42,8 +43,8 @@ class Stack():
         if not self.is_empty():
             return self.top.value
         else:
+            return("Can't peek on an empty stack.")
             raise Exception ("Can't peek on an empty stack.")
-            # return  #do I need to use return or exption will end code execution??
 
     def is_empty(self):
         return self.top == None
@@ -84,12 +85,14 @@ class Queue():
 
             return temp_node.value
         else:
+            return ("Can't dequeue in an empty Queue.")
             raise Exception ("Can't dequeue in an empty Queue.")
 
     def peek(self):
         if not self.is_empty():
             return self.front.value
         else:
+            return ("Can't peek in an empty Queue.")
             raise Exception ("Can't peek in an empty Queue.")
 
 
