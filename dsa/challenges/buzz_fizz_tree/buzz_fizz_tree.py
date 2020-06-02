@@ -100,7 +100,7 @@ class BinaryTree:
 
 
 
-        if not tree : return 'The Tree is empty'
+        if not tree : return 'The Tree is empty.'
 
 
         breadth = Queue()
@@ -136,11 +136,9 @@ class BinaryTree:
             front = breadth.dequeue()
 
             if not front.left:
-                print('new_node added to left')
                 front.left = new_node
                 return
             elif not front.right:
-                print('new_node added to rigth')
                 front.right = new_node
                 return
 
@@ -204,26 +202,3 @@ class BinarySearchTree(BinaryTree):
 
         return traverse(self.root, value)
 
-
-
-if __name__ == "__main__":
-    bst = BinarySearchTree()
-    bst.add(25)
-    bst.add(10)
-    bst.add(30)
-    bst.add(3)
-    bst.add(19)
-    bst.add(15)
-    bst.add(41)
-    
-    print(bst.preOrder())
-
-    # bst.FizzBuzzTree(bst)
-    # bst.BreadthFirstAdd(150)
-    # bst.BreadthFirstAdd(250)
-    # print(bst.preOrder())
-
-    return_tree = bst.FizzBuzzTree(bst)
-
-    print(return_tree)
-    print(return_tree.preOrder())
