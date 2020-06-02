@@ -18,4 +18,6 @@
 
 [Challenge 13 - Multi Bracket Validation](/dsa/challenges/multi_bracket_validation/README.md)
 
-[Challenge 14 - Binary Treee and Binary Search Tree](/dsa/challenges/tree/README.md)
+[Challenge 14 - Binary Tree and Binary Search Tree](/dsa/challenges/tree/README.md)
+
+[Challenge 16 - Buzz Fizz Tree](/dsa/challenges/buzz_fizz_tree/README.md)

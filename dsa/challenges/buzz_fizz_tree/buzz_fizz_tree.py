@@ -1,11 +1,34 @@
+from collections import deque
+
 class Node:
-    def __init__(self, value, left = None,  rigth = None):
+    def __init__(self, value, left=None, right=None):
         self.value = value
         self.left = left
-        self.right = rigth
+        self.right = right
 
     def __str__(self):
         return f"Node: {self.value}"
+
+
+class Queue:
+    def __init__(self):
+        self.storage = deque()
+
+    def enqueue(self, value):
+        self.storage.appendleft(value)
+
+    def dequeue(self):
+        if not self.is_empty():
+            return self.storage.pop()
+
+    def peek(self):
+        return self.storage[-1]
+
+    def is_empty(self):
+        return len(self.storage) == 0
+
+
+
 
 class BinaryTree:
     def __init__(self):
@@ -17,7 +40,6 @@ class BinaryTree:
         return f'The root is {self.root.value}'
 
     def preOrder(self):
-
         list_return = []
 
         if self.root == None : return list_return
@@ -62,8 +84,74 @@ class BinaryTree:
             list_return.append(current_node.value)
 
         traverse(self.root)
-
         return list_return
+
+    def FizzBuzzTree(self,tree):
+
+        def getFizzBuzzValue(value):
+            if (value % 3 == 0) and (value % 5 == 0):
+                return 'FizzBuzz'
+            elif (value % 5) == 0 :
+                return 'Buzz'
+            elif (value % 3) == 0:
+                return 'Fizz'
+            else:
+                return str(value)
+
+
+
+        if not tree : return 'The Tree is empty.'
+
+
+        breadth = Queue()
+        # create a copy of the tree
+        return_tree = tree
+
+        breadth.enqueue(return_tree.root)
+
+
+        while not breadth.is_empty():
+            front = breadth.dequeue()
+            # change the value of the node, using getFizzBuzzValue
+            front.value = getFizzBuzzValue(front.value)
+
+            if front.left:
+                breadth.enqueue(front.left)
+
+            if front.right:
+                breadth.enqueue(front.right)
+
+        return return_tree
+
+    # adds to breadt first
+    def BreadthFirstAdd(self, value):
+        new_node = Node(value)
+        breadth = Queue()
+
+        if not self.root : self.root = new_node
+
+        breadth.enqueue(self.root)
+
+        while not breadth.is_empty():
+            front = breadth.dequeue()
+
+            if not front.left:
+                front.left = new_node
+                return
+            elif not front.right:
+                front.right = new_node
+                return
+
+            if front.left:
+                breadth.enqueue(front.left)
+
+            if front.right:
+                breadth.enqueue(front.right)
+
+
+
+
+
 
 
 class BinarySearchTree(BinaryTree):
@@ -113,6 +201,4 @@ class BinarySearchTree(BinaryTree):
                     return traverse(current_node.right, value_to_search)
 
         return traverse(self.root, value)
-
-
 
