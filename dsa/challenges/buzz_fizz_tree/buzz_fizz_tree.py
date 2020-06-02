@@ -87,7 +87,6 @@ class BinaryTree:
         return list_return
 
     def FizzBuzzTree(self,tree):
-        breadth = Queue
 
         def getFizzBuzzValue(value):
             if (value % 3 == 0) and (value % 5 == 0):
@@ -101,16 +100,35 @@ class BinaryTree:
 
 
 
-        if not tree : return
-        # print(tree.root.left)
-        # print(tree.root.value)
-        # new_node = Node(getFizzBuzzValue(tree.root.value))
-        # print(new_node)
+        if not tree : return 'The Tree is empty'
+
+
+        breadth = Queue()
+        # create a copy of the tree
+        return_tree = tree
+
+        breadth.enqueue(return_tree.root)
+
+
+        while not breadth.is_empty():
+            front = breadth.dequeue()
+            # change the value of the node, using getFizzBuzzValue
+            front.value = getFizzBuzzValue(front.value)
+
+            if front.left:
+                breadth.enqueue(front.left)
+
+            if front.right:
+                breadth.enqueue(front.right)
+
+        return return_tree
 
     # adds to breadt first
     def BreadthFirstAdd(self, value):
         new_node = Node(value)
         breadth = Queue()
+
+        if not self.root : self.root = new_node
 
         breadth.enqueue(self.root)
 
@@ -197,10 +215,15 @@ if __name__ == "__main__":
     bst.add(19)
     bst.add(15)
     bst.add(41)
+    
     print(bst.preOrder())
 
     # bst.FizzBuzzTree(bst)
-    bst.BreadthFirstAdd(150)
-    bst.BreadthFirstAdd(250)
-    print(bst.preOrder())
+    # bst.BreadthFirstAdd(150)
+    # bst.BreadthFirstAdd(250)
+    # print(bst.preOrder())
 
+    return_tree = bst.FizzBuzzTree(bst)
+
+    print(return_tree)
+    print(return_tree.preOrder())
