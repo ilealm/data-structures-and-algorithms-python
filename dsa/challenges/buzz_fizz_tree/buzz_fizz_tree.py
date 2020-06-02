@@ -1,11 +1,34 @@
+from collections import deque
+
 class Node:
-    def __init__(self, value, left = None,  rigth = None):
+    def __init__(self, value, left=None, right=None):
         self.value = value
         self.left = left
-        self.right = rigth
+        self.right = right
 
     def __str__(self):
         return f"Node: {self.value}"
+
+
+class Queue:
+    def __init__(self):
+        self.storage = deque()
+
+    def enqueue(self, value):
+        self.storage.appendleft(value)
+
+    def dequeue(self):
+        if not self.is_empty():
+            return self.storage.pop()
+
+    def peek(self):
+        return self.storage[-1]
+
+    def is_empty(self):
+        return len(self.storage) == 0
+
+
+
 
 class BinaryTree:
     def __init__(self):
@@ -17,7 +40,6 @@ class BinaryTree:
         return f'The root is {self.root.value}'
 
     def preOrder(self):
-
         list_return = []
 
         if self.root == None : return list_return
@@ -62,8 +84,58 @@ class BinaryTree:
             list_return.append(current_node.value)
 
         traverse(self.root)
-
         return list_return
+
+    def FizzBuzzTree(self,tree):
+        breadth = Queue
+
+        def getFizzBuzzValue(value):
+            if (value % 3 == 0) and (value % 5 == 0):
+                return 'FizzBuzz'
+            elif (value % 5) == 0 :
+                return 'Buzz'
+            elif (value % 3) == 0:
+                return 'Fizz'
+            else:
+                return str(value)
+
+
+
+        if not tree : return
+        # print(tree.root.left)
+        # print(tree.root.value)
+        # new_node = Node(getFizzBuzzValue(tree.root.value))
+        # print(new_node)
+
+    # adds to breadt first
+    def BreadthFirstAdd(self, value):
+        new_node = Node(value)
+        breadth = Queue()
+
+        breadth.enqueue(self.root)
+
+        while not breadth.is_empty():
+            front = breadth.dequeue()
+
+            if not front.left:
+                print('new_node added to left')
+                front.left = new_node
+                return
+            elif not front.right:
+                print('new_node added to rigth')
+                front.right = new_node
+                return
+
+            if front.left:
+                breadth.enqueue(front.left)
+
+            if front.right:
+                breadth.enqueue(front.right)
+
+
+
+
+
 
 
 class BinarySearchTree(BinaryTree):
@@ -115,4 +187,20 @@ class BinarySearchTree(BinaryTree):
         return traverse(self.root, value)
 
 
+
+if __name__ == "__main__":
+    bst = BinarySearchTree()
+    bst.add(25)
+    bst.add(10)
+    bst.add(30)
+    bst.add(3)
+    bst.add(19)
+    bst.add(15)
+    bst.add(41)
+    print(bst.preOrder())
+
+    # bst.FizzBuzzTree(bst)
+    bst.BreadthFirstAdd(150)
+    bst.BreadthFirstAdd(250)
+    print(bst.preOrder())
 
