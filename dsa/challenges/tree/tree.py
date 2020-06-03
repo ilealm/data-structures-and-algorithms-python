@@ -90,30 +90,6 @@ class BinaryTree:
         return list_return
 
 
-    def BreadthFirstAdd(self, value):
-        new_node = Node(value)
-        breadth = Queue()
-
-        if not self.root : self.root = new_node
-
-        breadth.enqueue(self.root)
-
-        while not breadth.is_empty():
-            front = breadth.dequeue()
-
-            if not front.left:
-                front.left = new_node
-                return
-            elif not front.right:
-                front.right = new_node
-                return
-
-            if front.left:
-                breadth.enqueue(front.left)
-
-            if front.right:
-                breadth.enqueue(front.right)
-
 class BinarySearchTree(BinaryTree):
     def __str__(self):
         if not self.root : return 'The root is empty.'
@@ -181,19 +157,17 @@ class Queue:
         return len(self.storage) == 0
 
 
-if __name__ == "__main__":
-    tre = BinarySearchTree()
-    tre.add(100)
-    tre.add(50)
-    tre.add(120)
-    tre.add(20)
-    tre.add(70)
-    tre.add(90)
-    tre.add(150)
-    # tre.BreadthFirstAdd(2)
-    # tre.BreadthFirstAdd(7)
-    # tre.BreadthFirstAdd(5)
-    tree2 = tre
+# if __name__ == "__main__":
+#     tre = BinarySearchTree()
+#     tre.add(100)
+#     tre.add(50)
+#     tre.add(120)
+#     tre.add(20)
+#     tre.add(70)
+#     tre.add(90)
+#     tre.add(150)
+#     tree2 = tre
+#     print(tre.BreadthFirst(tree2))
 
-    print(tre.BreadthFirst(tree2))
-    
+
+
