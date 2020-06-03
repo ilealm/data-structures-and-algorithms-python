@@ -56,3 +56,43 @@ test/tree.py
 ![My solution](/assets/trees_2.jpg)
 
 _______
+
+
+# Breadth First
+
+Create a method on Binary Tree wich receives a tree and returns a string with all the visited nodes.
+
+## Challenge
+### Challenge 17
+
+**File:** challenges/tree/tree.py
+
+**Assets**
+
+* assets/breadth_first.jpg
+
+**GitHub** Pull# 16
+
+**GitHub Branch:** tree
+
+[Pull on GitHub](https://github.com/ilealm/data-structures-and-algorithms-python/pull/16)
+
+
+## Approach & Efficiency
+Big 0:
+### breadthFirst
+Tine: 0(n) => Because we are traverse all the nodes in the tree.
+Space: 0(1) => Because we are not creating copy of the data structure.
+
+## Test
+#### Source :
+
+test/tree.py
+
+**Notes:**
+
+
+
+## Solution
+
+![My solution](/assets/breadth_first.jpg)
