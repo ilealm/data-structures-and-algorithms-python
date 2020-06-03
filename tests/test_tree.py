@@ -75,6 +75,36 @@ def test_bst_contains_true(dummy_bst_six_nodes):
     assert actual == expected, 'Error on contains method. The value is not in the tree.'
 
 
+def test_bst_bread_first_traverse(dummy_bst_six_nodes):
+    tree = BinarySearchTree()
+    expected=[100,50,120,25,75,110]
+
+    actual = tree.BreadthFirst(dummy_bst_six_nodes)
+
+    assert actual == expected, 'Error on method BreadthFirst.'
+
+def test_bst_bread_first_traverse_root():
+    tree = BinarySearchTree()
+    expected= 'The Tree is empty.'
+
+    actual = tree.BreadthFirst(BinarySearchTree())
+
+    assert actual == expected, 'Error on method BreadthFirst.'
+
+def test_bst_bread_first_traverse_two_nodes():
+    tree = BinarySearchTree()
+    tree.add('orange')
+    tree.add('purple')
+    tree.add('red')
+    tree.add('blue')
+    expected = ['orange', 'blue', 'purple', 'red']
+
+    tree_actual = BinarySearchTree()
+
+    actual = tree_actual.BreadthFirst(tree)
+
+    assert actual == expected, 'Error on method BreadthFirst.'
+
 def test_bst_text_nodes():
     # given
     bst = BinarySearchTree()

@@ -71,7 +71,7 @@ class BinaryTree:
     def BreadthFirst(self,tree):
         list_return = []
 
-        if not tree : return 'The Tree is empty.'
+        if not tree.root : return 'The Tree is empty.'
 
         breadth = Queue()
 
