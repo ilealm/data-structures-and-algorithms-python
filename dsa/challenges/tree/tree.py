@@ -90,23 +90,24 @@ class BinaryTree:
 
     # added Jun 3rd, Challenge 18
     def FindMaximumValue(self):
-        max_value = []
+        if self.root == None : return None
 
-        if self.root == None : return list_return
+        current_max_value = self.root.value
 
         def traverse(current_node):
+            nonlocal current_max_value
             if not current_node : return
-            # print(current_node.value, max_value)
-            if current_node.value > max_value[0] :
-                # print(max_value[0])
-                max_value[0] = current_node.value
+
+            if current_node.value > current_max_value:
+                current_max_value = current_node.value
+
             traverse(current_node.left)
             traverse(current_node.right)
 
-        max_value.append(self.root.value)
         traverse(self.root)
 
-        return max_value[0]
+
+        return current_max_value
 
 class BinarySearchTree(BinaryTree):
     def __str__(self):
@@ -178,13 +179,13 @@ class Queue:
 # python dsa/challenges/tree/tree.py
 if __name__ == "__main__":
     tree = BinarySearchTree()
-    tree.add(100)
-    tree.add(50)
-    tree.add(120)
-    tree.add(20)
-    tree.add(700)
-    tree.add(90)
-    tree.add(150)
+    # tree.add(100)
+    # tree.add(50)
+    # tree.add(1200)
+    # tree.add(20)
+    # tree.add(700)
+    # tree.add(90)
+    # tree.add(150)
 # #     tree2 = tre
 # #     print(tree.BreadthFirst(tree2))
     print(tree.FindMaximumValue())
