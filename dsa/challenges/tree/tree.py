@@ -19,7 +19,6 @@ class BinaryTree:
         return f'The root is {self.root.value}'
 
     def preOrder(self):
-
         list_return = []
 
         if self.root == None : return list_return
@@ -89,6 +88,25 @@ class BinaryTree:
 
         return list_return
 
+    # added Jun 3rd, Challenge 18
+    def FindMaximumValue(self):
+        max_value = []
+
+        if self.root == None : return list_return
+
+        def traverse(current_node):
+            if not current_node : return
+            # print(current_node.value, max_value)
+            if current_node.value > max_value[0] :
+                # print(max_value[0])
+                max_value[0] = current_node.value
+            traverse(current_node.left)
+            traverse(current_node.right)
+
+        max_value.append(self.root.value)
+        traverse(self.root)
+
+        return max_value[0]
 
 class BinarySearchTree(BinaryTree):
     def __str__(self):
@@ -157,17 +175,20 @@ class Queue:
         return len(self.storage) == 0
 
 
-# if __name__ == "__main__":
-#     tre = BinarySearchTree()
-#     tre.add(100)
-#     tre.add(50)
-#     tre.add(120)
-#     tre.add(20)
-#     tre.add(70)
-#     tre.add(90)
-#     tre.add(150)
-#     tree2 = tre
-#     print(tre.BreadthFirst(tree2))
+# python dsa/challenges/tree/tree.py
+if __name__ == "__main__":
+    tree = BinarySearchTree()
+    tree.add(100)
+    tree.add(50)
+    tree.add(120)
+    tree.add(20)
+    tree.add(700)
+    tree.add(90)
+    tree.add(150)
+# #     tree2 = tre
+# #     print(tree.BreadthFirst(tree2))
+    print(tree.FindMaximumValue())
+
 
 
 
