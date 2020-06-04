@@ -122,6 +122,40 @@ def test_bst_text_nodes():
     assert actual == expected, 'Error creating a Binary Search Tree with text.'
 
 
+def test_find_maximum_value_empty():
+    bst = BinarySearchTree()
+    expected = None
+
+    actual = bst.FindMaximumValue()
+
+    assert actual == expected, 'Error getting the maximum value of an empty tree.'
+
+def test_find_maximum_value_one():
+    bst = BinarySearchTree()
+    bst.add(250)
+    expected = 250
+
+    actual = bst.FindMaximumValue()
+
+    assert actual == expected, 'Error getting the maximum value of one node tree.'
+
+
+def test_find_maximum_value_tree(dummy_bst_six_nodes):
+    expected = 120
+
+    actual = dummy_bst_six_nodes.FindMaximumValue()
+
+    assert actual == expected, 'Error getting the maximum value of 6 node tree.'
+
+
+def test_find_maximum_value_tree(dummy_bst_six_nodes):
+    dummy_bst_six_nodes.add(-20)
+    dummy_bst_six_nodes.add(700)
+    expected = 700
+
+    actual = dummy_bst_six_nodes.FindMaximumValue()
+
+    assert actual == expected, 'Error getting the maximum value of 8 node tree, with negative values.'
 
 @pytest.fixture
 def dummy_bst_six_nodes():
