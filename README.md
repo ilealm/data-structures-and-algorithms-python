@@ -21,3 +21,7 @@
 [Challenge 14 - Binary Tree and Binary Search Tree](/dsa/challenges/tree/README.md)
 
 [Challenge 16 - Buzz Fizz Tree](/dsa/challenges/buzz_fizz_tree/README.md)
+
+[Challenge 17 - Returning Values on Breadth First](/dsa/challenges/tree/README.md)
+
+[Challenge 18 - Find Maximum Value](/dsa/challenges/tree/README.md)

@@ -177,8 +177,8 @@ class Queue:
 
 
 # python dsa/challenges/tree/tree.py
-if __name__ == "__main__":
-    tree = BinarySearchTree()
+# if __name__ == "__main__":
+#     tree = BinarySearchTree()
     # tree.add(100)
     # tree.add(50)
     # tree.add(1200)
@@ -188,7 +188,7 @@ if __name__ == "__main__":
     # tree.add(150)
 # #     tree2 = tre
 # #     print(tree.BreadthFirst(tree2))
-    print(tree.FindMaximumValue())
+    # print(tree.FindMaximumValue())
 
 
 

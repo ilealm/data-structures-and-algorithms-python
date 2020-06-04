@@ -60,7 +60,7 @@ _______
 
 # Breadth First
 
-Create a method on Binary Tree wich receives a tree and returns a string with all the visited nodes.
+Create a method on Binary Tree which receives a tree and returns a string with all the visited nodes.
 
 ## Challenge
 ### Challenge 17
@@ -80,9 +80,11 @@ Create a method on Binary Tree wich receives a tree and returns a string with al
 
 ## Approach & Efficiency
 Big 0:
+
 ### breadthFirst
-Tine: 0(n) => Because we are traverse all the nodes in the tree.
-Space: 0(1) => Because we are not creating copy of the data structure.
+**Time: 0(n)** => Because we are traverse all the nodes in the tree.
+
+**Space: 0(1)** => Because we are not creating copy of the data structure.
 
 ## Test
 #### Source :
@@ -96,3 +98,51 @@ test/tree.py
 ## Solution
 
 ![My solution](/assets/breadth_first.jpg)
+
+____
+
+# Find Maximum Value
+
+Create a method find_maximum_value on Binary Tree that returns the maximum value of the tree's nodes.
+
+## Challenge 18
+
+- **File:** challenges/tree/tree.py
+
+- **Class, function or method:**
+
+    - FindMaximumValue
+
+### Assets
+
+* assets/find_max_value.jpg
+
+### GitHub
+
+- **GitHub** Pull# 17
+
+- **GitHub Branch:** find-maximum-binary-tree
+
+- [Pull on GitHub](https://github.com/ilealm/data-structures-and-algorithms-python/pull/17)
+
+
+## Approach & Efficiency
+Big 0:
+### FindMaximunValue
+
+**Time: 0(n)** => Because we are traverse all the nodes in the tree.
+
+**Space: 0(1)** => Because we are not creating copy of the data structure.
+
+## Test
+#### Source :
+
+-   test/tree.py
+
+## Notes
+
+
+
+## Solution
+
+![My solution](/assets/find_max_value.jpg)
