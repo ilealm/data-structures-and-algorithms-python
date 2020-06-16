@@ -1,40 +1,35 @@
-def mergeSort(arr):
-    if len(arr) >1:
-        mid = len(arr) // 2
-        L = arr[:mid] # Dividing the array elements
-        R = arr[mid:] # into 2 halves
+def merge_sort(list_to_review):
+    if len(list_to_review) >1:
+        mid = len(list_to_review) // 2
+        left = list_to_review[:mid]
+        right = list_to_review[mid:]
 
-        mergeSort(L) # Sorting the first half
-        mergeSort(R) # Sorting the second half
+        merge_sort(left)
+        merge_sort(right)
 
         i = j = k = 0
 
-        # Copy data to temp arrays L[] and R[]
-        while i < len(L) and j < len(R):
-            if L[i] < R[j]:
-                arr[k] = L[i]
+        while i < len(left) and j < len(right):
+            print(left, right)
+            if left[i] < right[j]:
+                list_to_review[k] = left[i]
                 i+= 1
             else:
-                arr[k] = R[j]
+                list_to_review[k] = right[j]
                 j+= 1
             k+= 1
 
         # Checking if any element was left
-        while i < len(L):
-            arr[k] = L[i]
+        while i < len(left):
+            list_to_review[k] = left[i]
             i+= 1
             k+= 1
 
-        while j < len(R):
-            arr[k] = R[j]
+        while j < len(right):
+            list_to_review[k] = right[j]
             j+= 1
             k+= 1
-    return arr
+
+    return list_to_review
 
 
-
-
-if __name__ == "__main__":
-    test1= [8,4,23,42,16,15]
-    # print(merge_sort(test1))
-    print(mergeSort(test1))
