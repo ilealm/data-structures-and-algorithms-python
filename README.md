@@ -25,3 +25,5 @@
 [Challenge 17 - Returning Values on Breadth First](/dsa/challenges/tree/README.md)
 
 [Challenge 18 - Find Maximum Value](/dsa/challenges/tree/README.md)
+
+[Challenge 26 - Insertion](/dsa/challenges/insertion/blog.md)
