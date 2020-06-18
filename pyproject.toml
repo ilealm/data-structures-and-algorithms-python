@@ -8,6 +8,7 @@ authors = ["Iris Leal <iris_leal_m@hotmail.com>"]
 python = "^3.8"
 pytest-watch = "^4.2.0"
 pytest = "^5.4.2"
+pysnooper = "^0.4.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
