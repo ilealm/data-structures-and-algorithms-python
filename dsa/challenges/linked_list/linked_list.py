@@ -98,14 +98,30 @@ class LinkedList():
         return str + "NULL"
 
 
+    ### methods added to use hastables
     # this one is from Ahmad
     def display(self):
+        '''
+        Display the values of the linked list
+        '''
         values = []
         current = self.head
         while current:
             values.append(current.value)
             current = current.next
         return values
+
+    def add_to_hashtable(self, value):
+        '''
+        This function works for adding to hash tables.
+        Since hashtales can't have duplicates keys, we need to search for the key, if it exist, the value of that key
+        will be changed. If the key doesn't exist in the list, will be added to the list.
+        '''
+        current = self.head
+        while current:
+            if current.value == value : return True
+            current = current.next
+        return False
 
 
 class Node():

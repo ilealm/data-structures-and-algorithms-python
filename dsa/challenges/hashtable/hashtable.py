@@ -31,8 +31,6 @@ class Hashtable:
             raise Exception ('The key and values must be valid.')
             return
 
-        print('-----------')
-        print(key)
         # obtain the position on the table for this key
         index = self.hash(key)
 
@@ -40,11 +38,13 @@ class Hashtable:
         if not self.table[index]:
             self.table[index] = LinkedList()
 
+        # before inserting the new value, will check if the key already exists, if so, I will update the value of that key, so I
+        # don't have duplicates.
+
         self.table[index].insert([key, value])
 
-        self.table[index].display()
 
-
+        # print(self.table[index].display())
 
 
 
@@ -59,10 +59,16 @@ if __name__ == "__main__":
     myHT.add(key, key + ' value')
     key='siri'
     myHT.add(key, key + ' value')
+    key='emma'
+    myHT.add(key, key + ' value')
+
+    key='ian'
+    myHT.add(key, key + ' value')
     key='ian'
     myHT.add(key, key + ' value')
 
     print(myHT.table[4].display())
+
 
 #  $ PYTHONPATH='.' python package_a/module_a_a.py
 # export PYTHONPATH=~/codefellows/401/data-structures-and-algorithms-python/dsa/
