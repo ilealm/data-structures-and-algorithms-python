@@ -172,21 +172,3 @@ class Node():
         return f"{self.value} -> {self.next}"
 
 
-
-# if __name__ == "__main__":
-#     ll = LinkedList()
-#     ll.append("one")
-#     ll.insert("one")
-#     ll.insert("two")
-#     ll.insert("tree")
-#     ll.insert("four")
-#     ll.insert("five")
-#     ll.insert("six")
-# if append when list is null, call insert
-    # print(ll)
-    # print('total nodes', ll.how_many_nodes())
-    # pos = 0 to validate
-    # pos = 3
-    # print('the value of position:', pos, ' is:', ll.kth_from_end(pos))
-# kth_from_end
-

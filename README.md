@@ -27,3 +27,5 @@
 [Challenge 18 - Find Maximum Value](/dsa/challenges/tree/README.md)
 
 [Challenge 26 - Insertion](/dsa/challenges/insertion/blog.md)
+
+[Challenge 30 - Hashtables](/dsa/challenges/hashtable/README.md)
