@@ -43,11 +43,6 @@ class Hashtable:
         self.table[index].add_to_hash_table(key, value)
 
 
-
-        print(self.table[index].display())
-
-
-
     def table_is_empty(self, index):
         '''
         Method that returns boolean depending if self.table[index] == None
@@ -88,8 +83,24 @@ class Hashtable:
 
         if self.table_is_empty(index) : return False
 
-
         return (self.table[index].key_exist_in_hashtable(key))
+
+
+    def display_hashtable(self):
+        for index in range(0, self.size):
+            text = ""
+            text += "\t" + str(index) + "\t"
+            if not self.table[index]:
+                text += "----"
+            else:
+                ll = self.table[index].display()
+                for node in ll:
+                    text += "[" + str(node[0]) + ' => ' + str(node[1]) + "]"
+            print(text)
+
+        # print(self.table[index].display())
+
+
 
 
 if __name__ == "__main__":
@@ -108,6 +119,10 @@ if __name__ == "__main__":
     myHT.add(key, key + ' value')
     key='ian'
     myHT.add(key, key + ' upd value')
+    key='nia'
+    myHT.add(key, key + ' value')
+    key='a'
+    myHT.add(key, key + '  value')
 
     # key='emma'
     # print(myHT.get(key))
@@ -130,3 +145,4 @@ if __name__ == "__main__":
 
     # print(myHT.table[4].display())
 
+    myHT.display_hashtable()
