@@ -97,6 +97,68 @@ class LinkedList():
 
         return str + "NULL"
 
+    ########################################################
+    ###     methods added to use hastables
+    ########################################################
+    # this one is from Ahmad
+    def display(self):
+        '''
+        Display the values of the linked list
+        '''
+        values = []
+        current = self.head
+        while current:
+            values.append(current.value)
+            current = current.next
+        return values
+
+    def add_to_hash_table(self, key, value):
+        '''
+        This function works for adding to hash tables.
+        Since hashtales can't have duplicates keys, we need to search for the key, if it exist,
+        the value of that key will be changed.
+        If the key doesn't exist in the list, will be added to the list.
+        current.value[0] = key
+        current.value[1] = value
+        '''
+        # need to check if the key exists, if so, change the value of value
+        current = self.head
+        while current:
+            if current.value[0] == key :
+                current.value[1] = value # I update the value only.
+                return
+            current = current.next
+
+        # Since  the value was not found, I added to the list
+        self.insert([key, value])
+
+
+    def get_hashtable_value(self, key):
+        '''
+        value = [key, value]
+        Method that traverse the linked list to check for a key (position 0) and returns its value (position 1)
+        if the key is not found, returns False
+        '''
+
+        current = self.head
+        while current:
+            if current.value[0] == key : return current.value[1]
+            current = current.next
+        return False
+
+    def key_exist_in_hashtable(self, key):
+        '''
+        value = [key, value]
+        Method that traverse the linked list to check for a key (position 0) and
+        returns a boolean if if is found.
+        '''
+        current = self.head
+        while current:
+            if current.value[0] == key : return True
+            current = current.next
+        return False
+
+
 class Node():
     def __init__ (self, value, next_ = None):
         self.value =  value
@@ -109,22 +171,4 @@ class Node():
     def __repr__(self):
         return f"{self.value} -> {self.next}"
 
-
-
-# if __name__ == "__main__":
-#     ll = LinkedList()
-#     ll.append("one")
-#     ll.insert("one")
-#     ll.insert("two")
-#     ll.insert("tree")
-#     ll.insert("four")
-#     ll.insert("five")
-#     ll.insert("six")
-# if append when list is null, call insert
-    # print(ll)
-    # print('total nodes', ll.how_many_nodes())
-    # pos = 0 to validate
-    # pos = 3
-    # print('the value of position:', pos, ' is:', ll.kth_from_end(pos))
-# kth_from_end
 
