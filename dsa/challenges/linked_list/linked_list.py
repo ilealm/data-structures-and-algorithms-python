@@ -138,6 +138,19 @@ class LinkedList():
             current = current.next
         return False
 
+    def key_exist_in_hashtable(self, key):
+        '''
+        value = [key, value]
+        Method that traverse the linked list to check for a key (position 0) and
+        returns a boolean if if is found.
+        '''
+        current = self.head
+        while current:
+            if current.value[0] == key : return True
+            current = current.next
+        return False
+
+
 class Node():
     def __init__ (self, value, next_ = None):
         self.value =  value

@@ -10,6 +10,7 @@ class Hashtable:
         self.size = size
         self.table = [None] * self.size
 
+
     def hash(self, key):
         '''
         Method that receives a key an generates a number based on the key, which
@@ -48,10 +49,16 @@ class Hashtable:
 
         # print(self.table[index].display())
 
+    def table_is_empty(self, index):
+        '''
+        Method that returns boolean depending if self.table[index] == None
+        '''
+        return  self.table[index] == None
+
 
     def get(self, key):
         '''
-        Metod that returns the value of the key.
+        Method that returns the value of the key.
         If is null, returns False.
         '''
         if not key :
@@ -61,7 +68,31 @@ class Hashtable:
         # obtain the position on the table for this key
         index = self.hash(key)
 
+        # # validate if the table have a value before calling methods, to avoid errors
+        # if not self.table[index]:
+        #     return False
+        if self.table_is_empty(index) : return False
+
         return (self.table[index].get_hashtable_value(key))
+
+
+
+    def contains(self, key):
+        '''
+        Method that takes a key and retuns a boolean depending if
+        the key exist in the table.
+        '''
+        if not key :
+            raise Exception ('The key and values must be valid.')
+            return
+
+        # obtain the position on the table for this key
+        index = self.hash(key)
+
+        if self.table_is_empty(index) : return False
+
+
+        return (self.table[index].key_exist_in_hashtable(key))
 
 
 if __name__ == "__main__":
@@ -78,15 +109,21 @@ if __name__ == "__main__":
     myHT.add(key, key + ' value')
 
 
-    key='emma'
-    print(myHT.get(key))
-    key='siri'
-    print(myHT.get(key))
-    key='iris'
-    print(myHT.get(key))
+    # key='emma'
+    # print(myHT.get(key))
+    # key='siri'
+    # print(myHT.get(key))
+    # key='iris'
+    # print(myHT.get(key))
 
-    key='nobody'
-    print(myHT.get(key))
+    # key='nobody'
+    # print(myHT.get(key))
+
+    # key='nobody'
+    key='erich'
+    print(myHT.contains(key))
+    key='iris'
+    print(myHT.contains(key))
 
     # key='ian'
     # myHT.add(key, key + ' value')
