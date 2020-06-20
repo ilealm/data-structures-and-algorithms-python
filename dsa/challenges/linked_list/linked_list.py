@@ -97,6 +97,17 @@ class LinkedList():
 
         return str + "NULL"
 
+
+    # this one is from Ahmad
+    def display(self):
+        values = []
+        current = self.head
+        while current:
+            values.append(current.value)
+            current = current.next
+        return values
+
+
 class Node():
     def __init__ (self, value, next_ = None):
         self.value =  value
