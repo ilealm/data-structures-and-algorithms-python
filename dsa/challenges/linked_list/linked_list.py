@@ -117,12 +117,26 @@ class LinkedList():
         Since hashtales can't have duplicates keys, we need to search for the key, if it exist, the value of that key
         will be changed. If the key doesn't exist in the list, will be added to the list.
         '''
+        print('in add_to_hashtable.. ', value[0])
         current = self.head
+        print(ll.head)
         while current:
             if current.value == value : return True
             current = current.next
         return False
 
+    def get_hashtable_value(self, key):
+        '''
+        value = [key, value]
+        Method that traverse the linked list to check for a key (position 0) and returns its value (position 1)
+        if the key is not found, returns False
+        '''
+
+        current = self.head
+        while current:
+            if current.value[0] == key : return current.value[1]
+            current = current.next
+        return False
 
 class Node():
     def __init__ (self, value, next_ = None):

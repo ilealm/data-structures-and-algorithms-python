@@ -2,6 +2,7 @@ from dsa.challenges.linked_list.linked_list import LinkedList
 # I need to execute
 # PYTHONPATH='.' python dsa/challenges/hashtable/hashtable.py
 # to I can execute the code
+# OR in this directory: PYTHONPATH="../../../" python hashtable.py
 
 
 class Hashtable:
@@ -41,18 +42,29 @@ class Hashtable:
         # before inserting the new value, will check if the key already exists, if so, I will update the value of that key, so I
         # don't have duplicates.
 
+        # print(self.table[index].includes([key, value]))
         self.table[index].insert([key, value])
-
+        # self.table[index].add_to_hashtable([key, value])
 
         # print(self.table[index].display())
 
 
+    def get(self, key):
+        '''
+        Metod that returns the value of the key.
+        If is null, returns False.
+        '''
+        if not key :
+            raise Exception ('The key and values must be valid.')
+            return
+
+        # obtain the position on the table for this key
+        index = self.hash(key)
+
+        return (self.table[index].get_hashtable_value(key))
+
 
 if __name__ == "__main__":
-    # ll = LinkedList()
-    # ll.insert('iris')
-    # print('here')
-    # print(ll)
     myHT = Hashtable(5)
 
     key='iris'
@@ -64,14 +76,20 @@ if __name__ == "__main__":
 
     key='ian'
     myHT.add(key, key + ' value')
-    key='ian'
-    myHT.add(key, key + ' value')
-
-    print(myHT.table[4].display())
 
 
-#  $ PYTHONPATH='.' python package_a/module_a_a.py
-# export PYTHONPATH=~/codefellows/401/data-structures-and-algorithms-python/dsa/
+    key='emma'
+    print(myHT.get(key))
+    key='siri'
+    print(myHT.get(key))
+    key='iris'
+    print(myHT.get(key))
 
-# PYTHONPATH='.' python dsa/challenges/hashtable/hashtable.py
-# this works and executes, but only when I run this
+    key='nobody'
+    print(myHT.get(key))
+
+    # key='ian'
+    # myHT.add(key, key + ' value')
+
+    # print(myHT.table[4].display())
+
