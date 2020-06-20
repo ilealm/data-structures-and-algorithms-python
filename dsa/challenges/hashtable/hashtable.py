@@ -40,14 +40,13 @@ class Hashtable:
         if not self.table[index]:
             self.table[index] = LinkedList()
 
-        # before inserting the new value, will check if the key already exists, if so, I will update the value of that key, so I
-        # don't have duplicates.
+        self.table[index].add_to_hash_table(key, value)
 
-        # print(self.table[index].includes([key, value]))
-        self.table[index].insert([key, value])
-        # self.table[index].add_to_hashtable([key, value])
 
-        # print(self.table[index].display())
+
+        print(self.table[index].display())
+
+
 
     def table_is_empty(self, index):
         '''
@@ -68,9 +67,7 @@ class Hashtable:
         # obtain the position on the table for this key
         index = self.hash(key)
 
-        # # validate if the table have a value before calling methods, to avoid errors
-        # if not self.table[index]:
-        #     return False
+        # validate if the table have a value before calling methods, to avoid errors
         if self.table_is_empty(index) : return False
 
         return (self.table[index].get_hashtable_value(key))
@@ -86,7 +83,7 @@ class Hashtable:
             raise Exception ('The key and values must be valid.')
             return
 
-        # obtain the position on the table for this key
+
         index = self.hash(key)
 
         if self.table_is_empty(index) : return False
@@ -102,12 +99,15 @@ if __name__ == "__main__":
     myHT.add(key, key + ' value')
     key='siri'
     myHT.add(key, key + ' value')
-    key='emma'
-    myHT.add(key, key + ' value')
+    key='iris'
+    myHT.add(key, key + ' upd value')
+    # key='emma'
+    # myHT.add(key, key + ' value')
 
     key='ian'
     myHT.add(key, key + ' value')
-
+    key='ian'
+    myHT.add(key, key + ' upd value')
 
     # key='emma'
     # print(myHT.get(key))
@@ -120,10 +120,10 @@ if __name__ == "__main__":
     # print(myHT.get(key))
 
     # key='nobody'
-    key='erich'
-    print(myHT.contains(key))
-    key='iris'
-    print(myHT.contains(key))
+    # key='erich'
+    # print(myHT.contains(key))
+    # key='iris'
+    # print(myHT.contains(key))
 
     # key='ian'
     # myHT.add(key, key + ' value')

@@ -97,8 +97,9 @@ class LinkedList():
 
         return str + "NULL"
 
-
-    ### methods added to use hastables
+    ########################################################
+    ###     methods added to use hastables
+    ########################################################
     # this one is from Ahmad
     def display(self):
         '''
@@ -111,19 +112,26 @@ class LinkedList():
             current = current.next
         return values
 
-    def add_to_hashtable(self, value):
+    def add_to_hash_table(self, key, value):
         '''
         This function works for adding to hash tables.
-        Since hashtales can't have duplicates keys, we need to search for the key, if it exist, the value of that key
-        will be changed. If the key doesn't exist in the list, will be added to the list.
+        Since hashtales can't have duplicates keys, we need to search for the key, if it exist,
+        the value of that key will be changed.
+        If the key doesn't exist in the list, will be added to the list.
+        current.value[0] = key
+        current.value[1] = value
         '''
-        print('in add_to_hashtable.. ', value[0])
+        # need to check if the key exists, if so, change the value of value
         current = self.head
-        print(ll.head)
         while current:
-            if current.value == value : return True
+            if current.value[0] == key :
+                current.value[1] = value # I update the value only.
+                return
             current = current.next
-        return False
+
+        # Since  the value was not found, I added to the list
+        self.insert([key, value])
+
 
     def get_hashtable_value(self, key):
         '''
