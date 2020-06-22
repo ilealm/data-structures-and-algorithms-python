@@ -29,3 +29,5 @@
 [Challenge 26 - Insertion](/dsa/challenges/insertion/blog.md)
 
 [Challenge 30 - Hashtables](/dsa/challenges/hashtable/README.md)
+
+[Challenge 31 - Repeated Words](/dsa/challenges/repeated_words/README.md)
