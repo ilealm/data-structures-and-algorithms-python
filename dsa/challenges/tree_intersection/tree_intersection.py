@@ -11,6 +11,9 @@ from dsa.challenges.tree.tree import BinarySearchTree
 def tree_intersection(tree_one, tree_two):
     arr_return = []
     values_dic = {}
+
+    if not tree_one or not tree_two : return arr_return
+
     # obtain the nodes of each tree in a list
     list_tree_one = tree_one.BreadthFirst(tree_one)
     list_tree_two = tree_two.BreadthFirst(tree_two)
@@ -32,42 +35,5 @@ def tree_intersection(tree_one, tree_two):
         if value == 1:
             arr_return.append(key)
 
-    print(arr_return)
-    #duplicates in the same tree?
+    return arr_return
 
-
-if __name__ == "__main__":
-    tree_one = BinarySearchTree()
-    tree_one.add(150)
-    tree_one.add(100)
-    tree_one.add(250)
-    tree_one.add(75)
-    tree_one.add(160)
-    tree_one.add(200)
-    tree_one.add(350)
-    tree_one.add(125)
-    tree_one.add(175)
-    tree_one.add(300)
-    tree_one.add(500)
-
-    tree_two = BinarySearchTree()
-    tree_two.add(42)
-    tree_two.add(100)
-    tree_two.add(600)
-    tree_two.add(15)
-    tree_two.add(160)
-    tree_two.add(200)
-    tree_two.add(350)
-    tree_two.add(125)
-    tree_two.add(175)
-    tree_two.add(4)
-    tree_two.add(500)
-
-
-
-    print(tree_one.BreadthFirst(tree_one))
-    print(tree_one.BreadthFirst(tree_two))
-
-    tree_intersection(tree_one,tree_two)
-
-    print('here')

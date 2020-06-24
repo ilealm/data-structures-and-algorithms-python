@@ -31,3 +31,5 @@
 [Challenge 30 - Hashtables](/dsa/challenges/hashtable/README.md)
 
 [Challenge 31 - Repeated Words](/dsa/challenges/repeated_words/README.md)
+
+[Challenge 32 - Tree intersection](/dsa/challenges/tree_intersection/README.md)
