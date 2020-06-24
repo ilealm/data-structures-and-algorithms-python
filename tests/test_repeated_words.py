@@ -1,5 +1,5 @@
 import pytest
-from dsa.challenges.repeated_words.repeated_words import count_words
+from dsa.challenges.repeated_words.repeated_words import count_words, return_first_duplicated
 
 def test_count_one():
     text = ""
@@ -34,3 +34,13 @@ def test_count_four():
     expected = {'It': 1}
 
     assert actual == expected, 'Error trying to obtain the word count of a one word.'
+
+def test_first_duplicated():
+    text = "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only..."
+    actual = return_first_duplicated(text)
+
+    expected = 'was'
+
+    assert actual == expected, 'Error trying to obtain the first duplicated word.'
+
+
