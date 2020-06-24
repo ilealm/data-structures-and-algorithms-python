@@ -13,3 +13,10 @@ def count_words(text):
 
   return word_dic
 
+def return_first_duplicated(text):
+    word_dic = count_words(text)
+
+    for key, value in word_dic.items():
+        if value > 1:
+            return key
+
