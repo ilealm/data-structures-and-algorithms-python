@@ -85,7 +85,8 @@ def test_bst_bread_first_traverse(dummy_bst_six_nodes):
 
 def test_bst_bread_first_traverse_root():
     tree = BinarySearchTree()
-    expected= 'The Tree is empty.'
+    # expected= 'The Tree is empty.'
+    expected = []
 
     actual = tree.BreadthFirst(BinarySearchTree())
 
