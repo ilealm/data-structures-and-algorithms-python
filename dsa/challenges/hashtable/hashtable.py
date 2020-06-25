@@ -99,3 +99,27 @@ class Hashtable:
             print(text)
 
 
+    def return_hashtable_values(self):
+        '''
+        Method that returns a list containing on each posstion a
+        dictionaty of key:value, for every element in the hasttable
+        '''
+        # list_return = []
+        # for index in range(0, self.size):
+        #     if self.table[index]:
+        #         ll = self.table[index].display()
+        #         for node in ll:
+        #             element = {}
+        #             element[node[0]] = str(node[1])
+        #             list_return.append(element)
+
+        # return list_return
+        list_return = {}
+        for index in range(0, self.size):
+            if self.table[index]:
+                ll = self.table[index].display()
+                for node in ll:
+                    # element = {}
+                    list_return[node[0]] = str(node[1])
+
+        return list_return

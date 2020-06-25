@@ -33,3 +33,5 @@
 [Challenge 31 - Repeated Words](/dsa/challenges/repeated_words/README.md)
 
 [Challenge 32 - Tree intersection](/dsa/challenges/tree_intersection/README.md)
+
+[Challenge 33 - Left Join](/dsa/challenges/left_join/README.md)
