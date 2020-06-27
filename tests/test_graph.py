@@ -8,7 +8,7 @@ def test_add_vertex():
     vertex = g.add_vertex('one')
     actual = vertex.value
 
-    assert actual == expected
+    assert actual == expected, 'Error adding one vertex to the graph'
 
 def test_add_edge():
     g = Graph()

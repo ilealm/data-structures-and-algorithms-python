@@ -35,3 +35,5 @@
 [Challenge 32 - Tree intersection](/dsa/challenges/tree_intersection/README.md)
 
 [Challenge 33 - Left Join](/dsa/challenges/left_join/README.md)
+
+[Challenge 35 - Graphs](/dsa/challenges/graph/README.md)
