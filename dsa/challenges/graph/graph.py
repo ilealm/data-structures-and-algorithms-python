@@ -54,6 +54,7 @@ class Graph:
 
     #     while not breadth.is_empty():
     #         front = breadth.dequeue()
+    #         # visited_vertex_names.append("1")
     #         visited_vertex.add(front)
 
     #         #  get the edges of the current vector
@@ -63,7 +64,7 @@ class Graph:
     #             if not edge.vertex in visited_vertex:
     #                 visited_vertex.add(edge.vertex)
     #                 visited_vertex_names.append(edge.vertex.value)
-    #                 breadth.enqueue(edge)
+    #                 breadth.enqueue(edge.vertex)
 
     #         # working
     #         # print(edge)
@@ -85,26 +86,17 @@ class Graph:
 
         while not breadth.is_empty():
             front = breadth.dequeue()
-            # visited_vertex_names.append("1")
             visited_vertex.add(front)
 
             #  get the edges of the current vector
             neighbors = self.get_neighbors(front)
             for edge in neighbors:
-                # print(edge.vertex.value)
                 if not edge.vertex in visited_vertex:
                     visited_vertex.add(edge.vertex)
                     visited_vertex_names.append(edge.vertex.value)
                     breadth.enqueue(edge.vertex)
 
-            # working
-            # print(edge)
-            # print(edge.vertex.value)
-
-
-
-        print(visited_vertex)
-        print(visited_vertex_names)
+        return visited_vertex_names
 
 
 class Vertex:
@@ -138,45 +130,3 @@ class Queue:
     def is_empty(self):
         return len(self.storage) == 0
 
-
-
-if __name__ == "__main__":
-    g = Graph()
-    pandora = g.add_vertex('Pandora')
-    arendale = g.add_vertex('Arendale')
-    metroville = g.add_vertex('Metroville')
-    monstropolis = g.add_vertex('Monstropolis')
-    narnia = g.add_vertex('Narnia')
-    naboo = g.add_vertex('Naboo')
-
-
-
-    g.add_edge(pandora,arendale)
-
-    g.add_edge(arendale, pandora)
-    g.add_edge(arendale, metroville)
-    g.add_edge(arendale, monstropolis)
-
-    g.add_edge(metroville,arendale)
-    g.add_edge(metroville,monstropolis)
-    g.add_edge(metroville,naboo)
-    g.add_edge(metroville,narnia)
-
-    g.add_edge(monstropolis,arendale)
-    g.add_edge(monstropolis,metroville)
-    g.add_edge(monstropolis,naboo)
-
-    g.add_edge(narnia,metroville)
-    g.add_edge(narnia,naboo)
-
-    g.add_edge(naboo,monstropolis)
-    g.add_edge(naboo,metroville)
-    g.add_edge(naboo,narnia)
-
-    # print(g._adjacency_list)
-    # print(g.get_neighbors('Pandora'))
-    g.breadth_first(pandora)
-    # g.breadth_first(arendale)
-    # g.breadth_first(monstropolis)
-
-    print("\nall good")
