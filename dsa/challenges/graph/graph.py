@@ -43,29 +43,68 @@ class Graph:
         return len(self._adjacency_list)
 
 
+
+    # def breadth_first(self, vertex):
+    #     visited_vertex = set()
+    #     visited_vertex_names = []
+    #     breadth = Queue()
+
+    #     breadth.enqueue(vertex)
+    #     visited_vertex_names.append(vertex.value)
+
+    #     while not breadth.is_empty():
+    #         front = breadth.dequeue()
+    #         visited_vertex.add(front)
+
+    #         #  get the edges of the current vector
+    #         neighbors = self.get_neighbors(front)
+    #         for edge in neighbors:
+    #             # print(edge.vertex.value)
+    #             if not edge.vertex in visited_vertex:
+    #                 visited_vertex.add(edge.vertex)
+    #                 visited_vertex_names.append(edge.vertex.value)
+    #                 breadth.enqueue(edge)
+
+    #         # working
+    #         # print(edge)
+    #         # print(edge.vertex.value)
+
+
+
+    #     print(visited_vertex)
+    #     print(visited_vertex_names)
+
+
     def breadth_first(self, vertex):
         visited_vertex = set()
+        visited_vertex_names = []
         breadth = Queue()
-        # visited_vertex.add('iris')
-        breadth.enqueue(vertex)
 
-        # while not breadth.is_empty():
-        front = breadth.dequeue()
-        visited_vertex.add(front.value)
-        #  get the edges of the current vector
-        neighbors = self.get_neighbors(front)
-        for edge in neighbors:
-            if not edge.vertex.value in visited_vertex:
-                visited_vertex.add(edge.vertex.value)
-                breadth.enqueue(edge)
+        breadth.enqueue(vertex)
+        visited_vertex_names.append(vertex.value)
+
+        while not breadth.is_empty():
+            front = breadth.dequeue()
+            # visited_vertex_names.append("1")
+            visited_vertex.add(front)
+
+            #  get the edges of the current vector
+            neighbors = self.get_neighbors(front)
+            for edge in neighbors:
+                # print(edge.vertex.value)
+                if not edge.vertex in visited_vertex:
+                    visited_vertex.add(edge.vertex)
+                    visited_vertex_names.append(edge.vertex.value)
+                    breadth.enqueue(edge.vertex)
 
             # working
             # print(edge)
             # print(edge.vertex.value)
 
 
-        print(visited_vertex)
 
+        print(visited_vertex)
+        print(visited_vertex_names)
 
 
 class Vertex:
@@ -136,9 +175,8 @@ if __name__ == "__main__":
 
     # print(g._adjacency_list)
     # print(g.get_neighbors('Pandora'))
-    # g.breadth_first(pandora)
+    g.breadth_first(pandora)
     # g.breadth_first(arendale)
-    g.breadth_first(naboo)
     # g.breadth_first(monstropolis)
 
     print("\nall good")
