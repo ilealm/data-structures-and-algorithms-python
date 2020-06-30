@@ -52,10 +52,19 @@ class Graph:
         # while not breadth.is_empty():
         front = breadth.dequeue()
         visited_vertex.add(front.value)
-        print(self.get_neighbors(front).__str__())
+        #  get the edges of the current vector
+        neighbors = self.get_neighbors(front)
+        for edge in neighbors:
+            if not edge.vertex.value in visited_vertex:
+                visited_vertex.add(edge.vertex.value)
+                breadth.enqueue(edge)
+
+            # working
+            # print(edge)
+            # print(edge.vertex.value)
 
 
-        # print(visited_vertex)
+        print(visited_vertex)
 
 
 
@@ -127,6 +136,9 @@ if __name__ == "__main__":
 
     # print(g._adjacency_list)
     # print(g.get_neighbors('Pandora'))
-    g.breadth_first(pandora)
+    # g.breadth_first(pandora)
+    # g.breadth_first(arendale)
+    g.breadth_first(naboo)
+    # g.breadth_first(monstropolis)
 
     print("\nall good")
