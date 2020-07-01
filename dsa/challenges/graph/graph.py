@@ -30,6 +30,16 @@ class Graph:
         self._adjacency_list[from_vertex].append(new_edge) # list of neighbors
 
 
+    def get_value_obj_dictionary(self):
+        # retuns a dictionaty with obj.value = obj ?eg Arendale : <obj>
+        value_obj_objs = {}
+        objs = self.__str__()
+        for obj in objs:
+            # store city = <city object>
+            value_obj_objs[obj.value] = obj
+
+        return value_obj_objs
+
 
     def get_vertices(self):
         return self._adjacency_list.keys()
@@ -42,38 +52,6 @@ class Graph:
     def __len__(self):
         return len(self._adjacency_list)
 
-
-
-    # def breadth_first(self, vertex):
-    #     visited_vertex = set()
-    #     visited_vertex_names = []
-    #     breadth = Queue()
-
-    #     breadth.enqueue(vertex)
-    #     visited_vertex_names.append(vertex.value)
-
-    #     while not breadth.is_empty():
-    #         front = breadth.dequeue()
-    #         # visited_vertex_names.append("1")
-    #         visited_vertex.add(front)
-
-    #         #  get the edges of the current vector
-    #         neighbors = self.get_neighbors(front)
-    #         for edge in neighbors:
-    #             # print(edge.vertex.value)
-    #             if not edge.vertex in visited_vertex:
-    #                 visited_vertex.add(edge.vertex)
-    #                 visited_vertex_names.append(edge.vertex.value)
-    #                 breadth.enqueue(edge.vertex)
-
-    #         # working
-    #         # print(edge)
-    #         # print(edge.vertex.value)
-
-
-
-    #     print(visited_vertex)
-    #     print(visited_vertex_names)
 
 
     def breadth_first(self, vertex):
@@ -103,8 +81,8 @@ class Vertex:
     def __init__(self, value):
         self.value = value
 
-    def __str__(self):
-        return self.value
+    # def __str__(self):
+    #     return self.value
 
 
 class Edge:

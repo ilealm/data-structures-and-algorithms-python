@@ -37,3 +37,5 @@
 [Challenge 33 - Left Join](/dsa/challenges/left_join/README.md)
 
 [Challenge 35 - Graphs](/dsa/challenges/graph/README.md)
+
+[Challenge 37 - Get Edge](/dsa/challenges/get_edge/README.md)
