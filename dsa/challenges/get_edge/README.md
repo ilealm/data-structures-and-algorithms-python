@@ -11,15 +11,11 @@ challenges/get_edge/get_edge.py
 [Pull on GitHub](https://github.com/ilealm/data-structures-and-algorithms-python/pull/28
 
 ### GitHub Branch
-get_edge
-
-## Approach & Efficiency
-**TIME:** O(n); Because we may need to traverse all the hashtables
-
-**SPACE:** O(n): Because we need to create new structures.
+Source : test/graph.py
 
 ## Solution
-Solution for lab 37
+Solution for lab 36
 
 ![My solution](/assets/get_edge.jpg)
+
 
