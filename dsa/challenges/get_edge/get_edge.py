@@ -6,7 +6,6 @@ from dsa.challenges.graph.graph import Graph
 
 
 def get_edge(graph, itinerary):
-    possible_travel = True
     travel_cost = 0
     city_objs = {}
 
@@ -14,43 +13,26 @@ def get_edge(graph, itinerary):
         raise Exception('The itineray is empty.')
         return is_possible
 
-    city_objs = g.get_value_obj_dictionary()
-#
-    # print('departure_city: ', itinerary[0], ', Destination:', itinerary[1])
+    if len(itinerary) == 1 :  return [False,0]
 
-    #  get the city object of the departure city
-    # departure_city_object = city_objs[itinerary[0]]
+    city_objs = g.get_value_obj_dictionary()
 
     # loop for all the rest of the cities in the intineraty
     for current_city in range(0,len(itinerary)):
-        print("**** current city", itinerary[current_city])
         city_object_neighbors = g.get_neighbors(city_objs[itinerary[current_city]])
-
         # get the next city to visit and review if is un my neighbors list
         if not (current_city+1 == len(itinerary)):
             next_city = itinerary[current_city + 1]
-            print('next_city', next_city)
+            can_move_next_city = False
             for i in range(0, len(city_object_neighbors)):
                 if next_city == city_object_neighbors[i].vertex.value:
-                    print ("you can travel")
+                    can_move_next_city = True
                     travel_cost += city_object_neighbors[i].weight
-                # print(city_object_neighbors[i].vertex.value)
-                # print(city_object_neighbors[i].weight)
-        # print(city_object_neighbors)
-    print(travel_cost)
-
-    # get city neighbors
-    # departure_city_object_neighbors = g.get_neighbors(departure_city_object)
-    # print(departure_city_object_neighbors[0].vertex.value)
-    # print(departure_city_object_neighbors[0].weight)
 
 
-    # loop throug each of the rest of the cities
-    # check if departure_city has an edge with destination_city
-    # if so, add the sum of the weight
-    # else retun false and cost
+        if not can_move_next_city :  return [False,0]
 
-
+    return [True, travel_cost]
 
 
 if __name__ == "__main__":
@@ -69,6 +51,7 @@ if __name__ == "__main__":
     g.add_edge(arendale, metroville,99)
     g.add_edge(arendale, monstropolis,42)
 
+    g.add_edge(metroville,pandora, 82)
     g.add_edge(metroville,arendale, 99)
     g.add_edge(metroville,monstropolis,105)
     g.add_edge(metroville,naboo, 26)
@@ -85,8 +68,12 @@ if __name__ == "__main__":
     g.add_edge(naboo,metroville,26)
     g.add_edge(naboo,narnia,250)
 
-    # get_edge(['Metroville', 'Pandora'])
-    get_edge(g, ['Arendale', 'Monstropolis', 'Naboo'])
+    print(get_edge(g, ['Metroville', 'Pandora']))  # [True, 82]
+    print(get_edge(g, ['Arendale', 'Monstropolis', 'Naboo']))  # [True, 115]
+    print(get_edge(g, ['Naboo', 'Pandora']))  # [False, 0]
+    print(get_edge(g, ['Narnia', 'Arendale','Naboo']))  # [False, 0]
+    print(get_edge(g, ['Metroville']))  # [False, 0]
+    print(get_edge(g, ['Pandora', 'Arendale','Metroville','Monstropolis','Naboo','Narnia']))  # [False, 0]
 
-    print('All good')
+
 
