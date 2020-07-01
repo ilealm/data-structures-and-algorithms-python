@@ -6,7 +6,7 @@ from dsa.challenges.graph.graph import Graph
 
 
 def get_edge(graph, itinerary):
-    is_possible = False
+    possible_travel = True
     travel_cost = 0
     city_objs = {}
 
@@ -14,23 +14,37 @@ def get_edge(graph, itinerary):
         raise Exception('The itineray is empty.')
         return is_possible
 
-    departure_city = itinerary[0]
-    destination_city = itinerary[1]
-    print('departure_city: ', departure_city, ', Destination:', destination_city)
-
-    # give the list of cities, with their obj values
-
-    # gives the list of objct cities
-    # city_obj = g.__str__()
-    # print(city_obj)
-    # for obj in city_obj:
-    #     city_objs[obj.value] = obj
     city_objs = g.get_value_obj_dictionary()
+#
+    # print('departure_city: ', itinerary[0], ', Destination:', itinerary[1])
 
-    print(city_objs)
+    #  get the city object of the departure city
+    # departure_city_object = city_objs[itinerary[0]]
 
-    # get city edges
-    # print(g._adjacency_list[departure_city])
+    # loop for all the rest of the cities in the intineraty
+    for current_city in range(0,len(itinerary)):
+        print("**** current city", itinerary[current_city])
+        city_object_neighbors = g.get_neighbors(city_objs[itinerary[current_city]])
+
+        # get the next city to visit and review if is un my neighbors list
+        if not (current_city+1 == len(itinerary)):
+            next_city = itinerary[current_city + 1]
+            print('next_city', next_city)
+            for i in range(0, len(city_object_neighbors)):
+                if next_city == city_object_neighbors[i].vertex.value:
+                    print ("you can travel")
+                    travel_cost += city_object_neighbors[i].weight
+                # print(city_object_neighbors[i].vertex.value)
+                # print(city_object_neighbors[i].weight)
+        # print(city_object_neighbors)
+    print(travel_cost)
+
+    # get city neighbors
+    # departure_city_object_neighbors = g.get_neighbors(departure_city_object)
+    # print(departure_city_object_neighbors[0].vertex.value)
+    # print(departure_city_object_neighbors[0].weight)
+
+
     # loop throug each of the rest of the cities
     # check if departure_city has an edge with destination_city
     # if so, add the sum of the weight
