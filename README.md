@@ -41,3 +41,5 @@
 [Challenge 36 - Graphs - Breadth First](/dsa/challenges/graph/README.md)
 
 [Challenge 37 - Get Edge](/dsa/challenges/get_edge/README.md)
+
+[Challenge 37 - Deep First on Graphs](/dsa/challenges/get_edge/README.md)

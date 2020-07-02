@@ -4,6 +4,9 @@ from collections import deque
 
 class Graph:
     def __init__(self):
+        # this gives the first element in the _adjacency_list
+        # print(next(iter(graph._adjacency_list)))
+        # print(next(iter(graph._adjacency_list)).value)
         self._adjacency_list = {}
 
     def __str__(self):
