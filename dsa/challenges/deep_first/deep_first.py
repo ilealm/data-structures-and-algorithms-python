@@ -9,6 +9,7 @@ def deep_first(graph):
     visited_vertex = set()
     DFS = []
     # all_visited_children = False
+    if not graph : return
 
     def traverse(current_vertex):
         if not current_vertex : return

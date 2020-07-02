@@ -18,6 +18,7 @@ GitHub Pull# 25
 
 ## Approach & Efficiency
 TIME: O(n); Because we need to traverse both hashtables
+
 SPACE O(1): Because we need to create new structures for the database.
 
 ## Solution

@@ -1,23 +1,31 @@
-# Hashtable
-This challenge was a exercise over hastables.
+# Depth First on Graphs
+Conduct a depth first preorder traversal on a graph.
 
 ## Challenge
-### Challenge 05: insertion, displaying_nodes and searching.
+### Challenge 38
 
-challenges/hastable/hastable.py
-GitHub Pull# 21
+challenges/deep_first/deep_first.py
+GitHub Pull# 29
 
-[Pull on GitHub](https://github.com/ilealm/data-structures-and-algorithms-python/pull/21)
+[Pull on GitHub](https://github.com/ilealm/data-structures-and-algorithms-python/pull/29)
 
+## Tests
+My tests are in:
+
+/test/test_deep_first.py
+
+[Challenge 38 - Test Deep First in a Graph](/tests/test_deep_first.py)
 
 ## Approach & Efficiency
-For the insertion method, this code have Big O(1) because is inserting at the begining of the list, not moving or traversing existing nodes.
+**TIME:** O(n) Because we need to traverse all the graph.
 
-For searching in the table, is Big O(1) because can get the same index no matther the lenght of the table.
+**SPACE:** O(n) Because we need to create new structures for the traversing.
 
+### GitHub Branch
+Source : test/deep_first.py
 
 ## Solution
 Solution for lab 30
 
-![My solution](/assets/hashtable.jpg)
+![My solution](/assets/deep_first.jpg)
 
