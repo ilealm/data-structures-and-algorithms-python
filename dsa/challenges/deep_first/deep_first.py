@@ -174,8 +174,8 @@ if __name__ == "__main__":
     graph.add_edge(d,e)
     graph.add_edge(d,a)
     graph.add_edge(d,b)
-    graph.add_edge(d,f)
     graph.add_edge(d,h)
+    graph.add_edge(d,f)
 
     graph.add_edge(e,d)
 
