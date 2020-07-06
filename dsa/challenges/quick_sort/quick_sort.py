@@ -19,14 +19,57 @@ def quick_sort(arr, start_index, end_index):
 
 # returns the next position of the lowest founded value
 def partition(arr,start_index, end_index):
-    i = ( start_index-1 )    # index of smaller element, that I already visited
+    pointer_left = ( start_index-1 )    # index of smaller element, that I already visited
     pivot = arr[end_index]
-    for j in range(start_index , end_index):
+    for pointer_right in range(start_index , end_index):
             # swap values
-        if arr[j] <= pivot:
-            i = i+1
-            arr[i],arr[j] = arr[j],arr[i]
+        if arr[pointer_right] <= pivot:
+            pointer_left = pointer_left + 1
+            arr[pointer_left],arr[pointer_right] = arr[pointer_right],arr[pointer_left]
 
-    arr[i+1],arr[end_index] = arr[end_index],arr[i+1]
+    arr[pointer_left+1],arr[end_index] = arr[end_index],arr[pointer_left+1]
     # print(i+1)
-    return ( i+1 )
+    return ( pointer_left + 1 )
+
+
+def quick_sort_craking(arr, left, right):
+    index = partition_craking(arr, left, right)
+
+    #  sort left half
+    if left < index-1:
+        quick_sort_craking(arr, left, index-1)
+    #  sort right half
+    if index < right:
+        quick_sort_craking(arr, index, right)
+
+
+def partition_craking(arr, left, right):
+    pivot = arr[(left + right) // 2] # pivot
+    while left <= right:
+        # find the element on left that should be on the right (greater than pivot)
+        # aka find the possition of the first element that is GRATER than the pivot, from the LEFT
+        while (arr[left] < pivot):
+            left += 1
+
+        # find the element on the right that should be on the left (lower than pivot)
+        # aka find the possition of the first element that is LESS than the pivot, from the RIGHT
+        while (arr[right] > pivot):
+            right -= 1
+
+        #swap elements
+        arr[left],arr[right] = arr[right],arr[left]
+        # Move right indices
+        left += 1
+        right -= 1
+
+    # how do I know I need to return left?.
+    # left is the middle always
+    return left
+
+
+
+if __name__ == "__main__":
+    # print(quick_sort([10, 5, -3, 12, 1, 30, 7],0, 6) )
+    array =[10, 15, -3, 12, 1, 30, 7]
+    quick_sort_craking(array,0, len(array)-1)
+    print(array)
