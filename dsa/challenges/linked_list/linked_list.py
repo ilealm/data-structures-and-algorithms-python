@@ -1,3 +1,16 @@
+class Node():
+    def __init__ (self, value, next_ = None):
+        self.value =  value
+        self.next = next_
+
+        if (not next_ == None) and ( not isinstance(next_, Node)):
+            raise TypeError("The value of the next node MUST be a node")
+
+
+    def __repr__(self):
+        return f"{self.value} -> {self.next}"
+
+
 class LinkedList():
     def __init__(self):
         self.head = None
@@ -158,17 +171,33 @@ class LinkedList():
             current = current.next
         return False
 
+    def reverse_LinkedList(self):
+        # establish my pointers
+        past = None
+        current = self.head
+        next_ = current.next
 
-class Node():
-    def __init__ (self, value, next_ = None):
-        self.value =  value
-        self.next = next_
+        while current.next:
+            current.next = past
+            past = current
+            current = next_
+            next_ = current.next
 
-        if (not next_ == None) and ( not isinstance(next_, Node)):
-            raise TypeError("The value of the next node MUST be a node")
+        current.next = past
+        self.head = current
+
+        return self.head
 
 
-    def __repr__(self):
-        return f"{self.value} -> {self.next}"
 
+# if __name__ == "__main__":
+#     ll = LinkedList()
+#     ll.insert(5)
+#     ll.insert(4)
+#     ll.insert(3)
+#     ll.insert(2)
+#     ll.insert(1)
+#     print(ll.__repr__())
+#     ll.reverse_LinkedList()
+#     print(ll.__repr__())
 
